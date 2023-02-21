@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
+//    Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
 
     // CHAUSSURES
     Route::get( '/chaussures',                  [ChaussureController::class, 'index'])  ->name('admin.chaussures');
@@ -34,3 +34,8 @@ Route::prefix('admin')->group(function () {
 
 
 });
+
+//
+//Route::get('/', function () {
+//    return view('index');
+//});
