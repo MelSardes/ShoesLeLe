@@ -13,6 +13,7 @@ class Chaussure extends Model
         'categorie_id',
         'nom_chaussure',
         'description',
+        "image",
         'nombre_disponible',
         'marque',
         'prix'
