@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Chaussure;
 use Illuminate\Http\Request;
 
@@ -9,6 +10,7 @@ class ChaussureController extends Controller
 {
     public function index() {
         // Récupere tous les éléments et retourne la vue index
+        return view('admin.chaussures.index');
     }
 
 
