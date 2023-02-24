@@ -1,0 +1,76 @@
+.elementor-image-carousel-wrapper .elementor-swiper-button { color: #555 !important; top: 25%; }
+.elementor-swiper-button.swiper-button-disabled { opacity: 0; }
+.eicon-chevron-left::before, .eicon-chevron-right::before{ top: 0 !important; }
+.woo-products .owl-theme .owl-buttons div, ul.owl-theme.products .owl-buttons div{ top: -65px;}
+.owl-theme .owl-buttons div {
+	display: block;
+	font-size: 0;
+	color: #000;
+	height: 44px;
+	position: absolute;
+	text-align: center;
+	width: 30px;
+	top: 0;
+	line-height: 38px;
+	background: rgba(0, 0, 0, 0) url("../../images/megnor/arrow.png") no-repeat scroll left 0;
+	opacity: 0;
+	-khtml-opacity: 0;
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+	margin: auto;
+	bottom: 0;
+}
+.owl-theme .owl-buttons div.owl-next {
+	background-position: right 0;
+}
+.owl-theme .owl-buttons div.owl-next:hover {
+	background-position: right -104px;
+}
+.owl-theme .owl-buttons div.owl-prev:hover {
+	background-position: left -104px;
+}
+.owl-theme:hover .owl-buttons div {opacity: 1; -khtml-opacity: 1;-webkit-opacity: 1;-moz-opacity: 1;}
+.hot-product .owl-theme .owl-buttons div.owl-prev {left: 10px;}
+.hot-product .owl-theme .owl-buttons div.owl-next {right: 10px;}
+.blog-posts-content .owl-theme .owl-buttons div.owl-prev {left: -30px;}
+.blog-posts-content .owl-theme .owl-buttons div.owl-next {right: -30px;}
+.owl-theme .owl-buttons div.owl-prev, .brand-slider .elementor-image-carousel-wrapper .elementor-swiper-button.elementor-swiper-button-prev {left: -30px; right:auto;}
+.owl-theme .owl-buttons div.owl-next, .brand-slider .elementor-image-carousel-wrapper .elementor-swiper-button.elementor-swiper-button-next {right: -30px; left: auto;}
+/* .owl-theme .owl-buttons div.owl-prev::after, .eicon-chevron-left::after, .owl-theme .owl-buttons div.owl-next::after, .eicon-chevron-right::after {
+	font-family: "FontAwesome";
+	font-size: 50px;
+	line-height: 32px;
+	position: absolute;
+} */
+/* .owl-theme .owl-buttons div.owl-prev:after,.eicon-chevron-left::after{content: "\f104";	left: 0;	right: 0;}	 */
+/* .owl-theme .owl-buttons div.owl-next:after, .eicon-chevron-right::after{content: "\f105";	left: 0;	right: -4px; } */
+.custom-testimonial .owl-controls { margin: 20px 0 0; }
+.owl-pagination > div {	display: inline-block;	margin: 0 4px;}
+.owl-pagination .owl-page span{height:10px;width:10px;background-color:#d9d9d9; border: 1px solid transparent; display:block;border-radius:50%;-webkit-border-radius:50%;-khtml-border-radius:50%;-moz-border-radius:50%; }
+.owl-pagination .owl-page:hover span,.owl-pagination .owl-page.active:hover span,.owl-pagination .owl-page.active span{background:#1c9e8d; border-color: #1c9e8d;  }
+.owl-pagination .owl-page.active span{cursor:default;}
+.owl-pagination .owl-page span:before{font-family:'FontAwesome';font-size:13px;color:#000;}
+.product-page .owl-pagination{margin:10px 0;}
+.owl-theme .owl-page span.owl-numbers{height:auto;width:auto;color:#FFF;padding:2px 10px;font-size:12px;-webkit-border-radius:30px;-moz-border-radius:30px;border-radius:30px;}
+.owl-pagination{margin:0;text-align:center; display: none;}
+.owl-item.loading{min-height:150px;background:url(../../images/owl/AjaxLoader.gif) no-repeat center center;}
+.owl-carousel .owl-wrapper:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.owl-carousel{display:none;position:relative;width:100%;-ms-touch-action:pan-y;}
+.owl-carousel .owl-wrapper{display:none;position:relative;-webkit-transform:translate3d(0px, 0px, 0px);}
+.owl-carousel .owl-wrapper-outer{
+	overflow-inline: -moz-hidden-unscrollable;
+	overflow-inline: hidden-unscrollable;
+	overflow-x: clip;
+	position: relative;
+	width: 100%
+}
+.owl-carousel .owl-wrapper-outer.autoHeight{-webkit-transition:height 500ms ease-in-out;-moz-transition:height 500ms ease-in-out;-ms-transition:height 500ms ease-in-out;-o-transition:height 500ms ease-in-out;transition:height 500ms ease-in-out;}
+.owl-carousel .owl-item{float:left; }
+.owl-page,
+.owl-buttons div{cursor:pointer;}
+.grabbing{cursor:url("../../images/owl/grabbing.png") 8 8, move;}
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item{backface-visibility: hidden; -webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);}
+.owl-carousel{position:relative;float:left;}
+.portfolio-container, #latest_news{margin:0 auto;}
+#sb_instagram #sbi_images .owl-item .sbi_item {width: 100% !important;}
