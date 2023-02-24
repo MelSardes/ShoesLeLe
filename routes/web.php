@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\ChaussureController;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Front\FrontChaussureController;
+use App\Http\Controllers\Front\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +36,13 @@ Route::prefix('admin')->group(function () {
 
 });
 
-//
-//Route::get('/', function () {
-//    return view('index');
-//});
+
+Route::prefix('categories')->group(function () {
+    Route::get("/", [WelcomeController::class, 'index'])    ->name('categories');
+
+    Route::get('/{categorie}',              [FrontChaussureController::class, 'index'])  ->name('chaussures.index');
+    Route::get('/{categorie}/{chaussure}',  [FrontChaussureController::class, 'show'])   ->named('chassure.show');
+});
+
+
+Route::get('/', [WelcomeController::class, 'index'])->name('index');
