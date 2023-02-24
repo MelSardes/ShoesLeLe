@@ -10,6 +10,7 @@ class ChaussureController extends Controller
 {
     public function index() {
         // Récupere tous les éléments et retourne la vue index
+        return view('admin.chaussures.index');
     }
 
 

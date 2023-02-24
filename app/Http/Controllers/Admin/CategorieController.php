@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-class CategorieContrroller extends Controller
+use App\Http\Controllers\Controller;
+
+class CategorieController extends Controller
 {
     public function index() {
         // Récupere tous les éléments et retourne la vue index
+        return view('admin.categorie.index');
     }
 
 
