@@ -119,7 +119,7 @@
 
 
 <li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="" class="side-nav-link">
+    <a style="height:60px;font-size:15px" href="a.php" class="side-nav-link">
         <i class="dripicons-user"></i>
         <span>Mon profil</span>
         <!-- <span class="badge bg-warning rounded-pill float-end">0</span> -->
@@ -176,43 +176,72 @@
                         </div>
                         <!-- end page title --> 
                        
-                        <form action="" method="POST">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <div class="row">
-                                            <div class="col-xl-6">
-                                            @csrf
-                                                <div class="mb-3">
-                                                    <label class="form-label">Nom categorie</label>
-                                                    <input type="text" name="nom_categorie  " class="form-control" >
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label">Description categorie</label>
-                                                    <textarea class="form-control" name="description" rows="5"></textarea>
-                                                </div>
+                        <div class="tab-content">
+                                            <div class="tab-pane show active" id="basic-datatable-preview">
+                                            <button type="submit" class="btn btn-warning rounded-pill" name="valider">
+                                            <a style="text-decoration: none;color: black;font-weight:bold;" href="{{route('admin.categorie.create')}}" >+  Ajouter une catégorie</a>
+                                            </button>
+                                            <br>
+                                            <br>
+                                                <table  class="table table-striped dt-responsive nowrap w-100">
+                                                    <thead>
+                                                        <tr>
+                                                           
+                                                            <th>Categorie</th>
+                                                            <th>Description</th>
+                                                            <th>Supprimer ?</th>
+                                                            
+                                                        </tr>
+                                                    </thead>
                                                 
-                                                <!-- <div class="mb-3">
-                                                    <label class="form-label">Prix</label>
-                                                    <input type="text" required name="prix" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000" data-reverse="true">
-                                                </div> -->
                                                 
-                                                <hr>
-                                                <button type="submit" class="btn btn-success rounded-pill" name="valider">Enregistrer</button>
+                                                    <tbody>
+                                                        @php($i=1)
+                                                        @foreach ($categories as $categorie)
+                                                        <tr>
+                                                        
+                                                        <td>{{ $categorie->nom_categorie }}</td>
+                                                        <td>{{ $categorie->description }}</td>
+                                                        <td><!-- Danger Alert Modal -->
+                                                            <button  type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#danger-alert-modal-{{ $categorie->id }}"><i class=" uil-trash"></i></button>
+                                                        </td>
+                                                        @endforeach
 
-                                                
-                                            </div> <!-- end col-->
-                                        </div>
-                                        <!-- end row -->
-                                       
-
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
+                                                        @foreach ($categories as $categorie)
+                                                            <div id="danger-alert-modal-{{ $categorie->id }}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                                <div class="modal-dialog modal-sm">
+                                                                    <div class="modal-content modal-filled bg-danger">
+                                                                    <form action="{{route('admin.categorie.destroy',$categorie)}}" class="ps-3 pe-3" enctype="multipart/form-data" method="post">
+                                                        
+                                                        @csrf
+                                                        @method('DELETE')
+                                                                        <div class="modal-body p-4">
+                                                                            <div class="text-center">
+                                                                                <i class="dripicons-warning h1"></i>
+                                                                                <h4 class="mt-2">Supprimer!</h4>
+                                                                                <p class="mt-3">Etes vous sur de vouloir supprimer <strong>{{ $categorie->nom_categorie }}</strong> ?</p> 
+                                                                                <button type="submit" class="btn btn-warning">
+                                                                                Oui
+                                                                                </button>
+                                                                                <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Non</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div><!-- /.modal-content -->
+                                                                </div><!-- /.modal-dialog -->
+                                                            </div><!-- /.modal -->
+                                                            </form>
+                                                    
+                                                            @endforeach
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                    
+              
+                                                </table>                                           
+                                            </div> <!-- end preview-->
+                                        
+                                     
+                                        </div> <!-- end tab-content-->
                         
                     </div>
                      <!-- End Content -->

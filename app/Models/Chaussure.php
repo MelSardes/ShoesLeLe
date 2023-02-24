@@ -13,10 +13,10 @@ class Chaussure extends Model
         'categorie_id',
         'nom_chaussure',
         'description',
-        "image",
-        'nombre_disponible',
+        'nombre_disponible',        
         'marque',
-        'prix'
+        'prix',
+        "image"
     ];
 
     function categorie() {
