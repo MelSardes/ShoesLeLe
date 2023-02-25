@@ -153,6 +153,7 @@
             <!-- <span class="badge bg-danger rounded-pill float-end">Nouveau</span> -->
     </a>
 </li>
+
                                 
     
 
@@ -230,7 +231,7 @@
                             </div> <!-- end col-->
                         </div>
                         <!-- end row-->
-
+                       
 
                         
                         </div>

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
         <meta charset="utf-8" />
-        <title>Chaussures</title>
+        <title>Espace producteurs</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -19,6 +19,7 @@
        <link href="{{asset('assets/css/app-modern.min.css')}}" rel="stylesheet" type="text/css" id="app-style" />
         
     </head>
+
 
     <body class="loading" data-layout-color="light" data-layout="detached" data-rightbar-onstart="true">
 
@@ -118,7 +119,7 @@
 
 
 <li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="profil.php" class="side-nav-link">
+    <a style="height:60px;font-size:15px" href="a.php" class="side-nav-link">
         <i class="dripicons-user"></i>
         <span>Mon profil</span>
         <!-- <span class="badge bg-warning rounded-pill float-end">0</span> -->
@@ -160,6 +161,7 @@
 
                 </div>
                 <!-- Left Sidebar End -->
+
                 <div class="content-page">
                     <div class="content">
                         
@@ -168,102 +170,209 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title">Nouvelle annonce</h4>
+                                    <h4 class="page-title">CHAUSSURE</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- end page title --> 
-                        <?php
-                               
-                                    if(isset($_GET['error'])){
-                                        ?>
-                                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
-                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-                                            <strong><?php echo $_GET['error'];?></strong>
-                                        </div>
-                                        <?php
-                                        }elseif(isset($_GET['success'])){
-                                            ?>
-                                            <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
-                                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                <strong><?php echo $_GET['success'];?></strong>
-                                            </div>
-                                            <?php 
-                                        }
-                                    
-                                    ?>
-                        <form action="traitement/add_produit.php" method="POST" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <div class="row">
-                                            <div class="col-xl-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Titre</label>
-                                                    <input required type="text" name="titre" class="form-control" >
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label">Description</label>
-                                                    <textarea required  class="form-control" name="description" rows="5"></textarea>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label">Marque</label>
-                                                    <input type="text" name="marque  " class="form-control" >
-                                                </div>
+                       
+                        <div class="tab-content">
+                                            <div class="tab-pane show active" id="basic-datatable-preview">
+                                            <button type="submit" class="btn btn-warning rounded-pill" name="valider">
+                                            <a style="text-decoration: none;color: black;font-weight:bold;" href="{{route('admin.chaussure.create')}}" >+  Ajouter une chaussure</a>
+                                            </button>
+                                            <br>
+                                            <br>
+                                                <table  class="table table-striped dt-responsive nowrap w-100">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Image</th>
+                                                            <th>Chaussure</th>
+                                                            <th>Marque</th>
+                                                            <th>Voir ?</th>
+                                                            <th>Modifier ?</th>
+                                                            <th>Supprimer ?</th>
+                                                            
+                                                            
+                                                        </tr>
+                                                    </thead>
                                                 
-
-                                            </div> <!-- end col--></form>
-
-                                            <div class="col-xl-6">
-                                            <div class="mb-3">
-                                                    <label class="form-label">Prix</label>
-                                                    <input type="text" required name="prix" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000" data-reverse="true">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label">Nombre disponible pour cette chaussure</label>
-                                                    <input type="text" name="nbre_dispo  " class="form-control" data-toggle="input-mask" data-mask-format="000" data-reverse="true">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="example-select" class="form-label"></label>
-                                                    <select required class="form-select" name="unite">
-                                                    <option selected="">Choisir la quantité</option>
-                                                    <option value="l'unité">Pièce(s)</option>
-                                                    <option value="le kg">Kg(Kilogrammes)</option>
-                                                    <option value="le g">g(grammes)</option>
-                                                    <option value="le L">L(litres)</option>
-                                                    <option value="le cL">cL(centilitres)</option>
-                                                    <option value="le mL">mL(millilitres)</option>
-                                                    </select>
-                                                </div>
-                                            <hr>
-                                        <div class="mb-3 mt-3 mt-xl-0">
-                                                    <label class="mb-0">Photo de la chaussure</label>
-                                                    <p class="text-muted font-14">Conseil: Choisissez des photos carré de préférence. Taille maximum par photo: 5 Mo, format accepté: jpg, png.</p>
-
-                                        <div >
-                                                         <div class="input-group">
-                                                        <input name="photo2" required type="file" accept="image/*" class="form-control" >
-
-                                                        </div>
-                                                    <!-- end file preview template -->
-                                                   
-                                                </div>
-                                                <hr>
-                                                <button type="submit" class="btn btn-success rounded-pill" name="valider">Enregistrer</button>
-
                                                 
-                                            </div> <!-- end col-->
-                                        </div>
-                                        <!-- end row -->
-                                       
+                                                    <tbody>
+                                                        @php($i=1)
+                                                        @foreach ($chaussures as $chaussure)
+                                                        <tr>
+                                                        <td><img src="{{ asset('/'.$chaussure-> image) }}" alt="Image de chaussure" style="max-width: 90px;"></td>
+                                                        <td>{{ $chaussure->nom_chaussure }}</td>
+                                                        <td>{{ $chaussure->marque }}</td>
+                                                        
+                                                        <td>
+                                                            <button  type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#scrollable-modal-{{ $chaussure->id }}"><i class=" uil-info-circle"></i></button>
+                                                        </td>
+                                                        <td>
+                                                            <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ $chaussure->id }}">
+                                                            <i class="dripicons-pencil"></i></button>
+                                                        </td>
+                                                           
+                                                        <td>
+                                                            <button  type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#danger-alert-modal-{{ $chaussure->id }}"><i class=" uil-trash"></i></button>
+                                                        </td>
+                                                        @endforeach
+                                                        
+                                                        @foreach ($chaussures as $chaussure)
+                                                        <div class="modal fade" id="scrollable-modal-{{ $chaussure->id }}" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="scrollableModalTitle">Informations</h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <form action="#" class="ps-3 pe-3">
+                                                                            <div class="mb-3">
+                                                                                    <label  class="form-label">Photo</label>
+                                                                                    <img src="{{ $chaussure->image }}" alt="">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label  class="form-label">Nom de la chaussure</label>
+                                                                                    <input name="nom_chaussure" disabled="disabled" class="form-control" type="text" value="{{ $chaussure->nom_chaussure }}" >
+                                                                                </div>
+                                                                       
+                                                                                
+                                                                                <div class="mb-3">
+                                                                                    <label  class="form-label">Marque</label>
+                                                                                    <input name="marque" disabled="disabled" class="form-control" type="text" value="{{ $chaussure->marque }}">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label  class="form-label">Prix</label>
+                                                                                    <input name="prix" disabled="disabled" class="form-control" type="text" value="{{ $chaussure->prix }}">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label class="form-label">Nombre disponible pour cette chaussure</label>
+                                                                                    <input type="text" name="nombre_disponible" value="{{ $chaussure->nombre_disponible}}" class="form-control" data-toggle="input-mask" data-mask-format="000" data-reverse="true">
+                                                                                </div>
+                                                                               
+                                                                                <div class="mb-3">
+                                                                                    <label  class="form-label">Description</label>
+                                                                                    <textarea name="description" disabled="" cols="45" rows="3">{{ $chaussure->description }}</textarea>
+                                                                                    
+                                                                                </div>
+                                                                               
+                                                                            </form>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </div><!-- /.modal-content -->
+                                                                </div><!-- /.modal-dialog -->
+                                                            </div><!-- /.modal -->     
+                                                            @endforeach
 
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
+
+
+                                                                                                                    
+                                                        @foreach ($chaussures as $chaussure)
+                                                        <div class="modal fade" id="staticBackdrop-{{ $chaussure->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="scrollableModalTitle">Modifications</h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                        <form action="{{route('admin.chaussure.update',$chaussure)}}" class="ps-3 pe-3" enctype="multipart/form-data" method="post">
+                                                                        
+                                                                        @csrf
+                                                                        @method('PUT')
+                                                                            <div class="mb-3">
+                                                                                    <label  class="form-label">Nom de la chaussure</label>
+                                                                                    <input name="nom_chaussure"  class="form-control" type="text" value="{{ $chaussure->nom_chaussure }}" >
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label for="example-select" class="form-label"></label>
+                                                                                    <select required type="select" class="form-select" name="categorie_id" id="categ" placeholder="categorie" rows="3">
+                                                                                    @foreach ($categories as $cat)
+                                                                                    <option value="{{ $cat->id }}">{{ $cat->nom_categorie }}</option>
+                                                                                    @endforeach
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label  class="form-label">Marque</label>
+                                                                                    <input name="marque"  class="form-control" type="text" value="{{ $chaussure->marque }}">
+                                                                                </div>
+                                                                                <div class="mb-3">
+                                                                                    <label  class="form-label">Prix</label>
+                                                                                    <input name="prix"  class="form-control" type="text" value="{{ $chaussure->prix }}">
+                                                                                </div>
+                                                                               
+                                                                                <div class="mb-3">
+                                                                                    <label class="form-label">Nombre disponible pour cette chaussure</label>
+                                                                                    <input name="nombre_disponible" type="text" name="nombre_disponible" value="{{ $chaussure->nombre_disponible}}" class="form-control" data-toggle="input-mask" data-mask-format="000" data-reverse="true">
+                                                                                </div>
+
+                                                                                <div class="mb-3">
+                                                                                    <label  class="form-label">Description</label>
+                                                                                    <textarea name="description" class="form-control"  cols="45" rows="3">{{ $chaussure->description }}</textarea>
+                                                                                    
+                                                                                </div>
+                                                                            
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                                        <button type="submit" class="btn btn-warning">
+                                                                        Modifier
+                                                                        </button>
+                                                                        
+                                                                    </div> <!-- end modal footer -->
+                                                                    </form>
+                                                                        </div>
+                                                                        
+                                                                    </div><!-- /.modal-content -->
+                                                                </div><!-- /.modal-dialog -->
+                                                            </div><!-- /.modal -->     
+                                                            @endforeach
+
+
+
+
+                                                   @foreach ($chaussures as $chaussure)
+                                                    <div id="danger-alert-modal-{{ $chaussure->id }}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                        <div class="modal-dialog modal-sm">
+                                                            <div class="modal-content modal-filled bg-danger">
+                                                                <div class="modal-body p-4">
+                                                                <form action="{{route('admin.chaussure.destroy',$chaussure)}}" class="ps-3 pe-3" enctype="multipart/form-data" method="post">
+                                                        
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                    <div class="text-center">
+                                                                        <i class="dripicons-warning h1"></i>
+                                                                        <h4 class="mt-2">Supprimer!</h4>
+                                                                        <p class="mt-3">Etes vous sur de vouloir supprimer la chaussure: <strong>{{ $chaussure->nom_chaussure }}</strong></p>
+                                                                        <br>
+                                                                        <button type="submit" class="btn btn-warning">
+                                                                        Oui
+                                                                        </button>
+                                                                        <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Non</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div><!-- /.modal-content -->
+                                                        </div><!-- /.modal-dialog -->
+                                                        </form>
+                                                    </div><!-- /.modal -->
+                                                    @endforeach
+                                                    
+
+                                                        
+                                                        
+                                                    </tbody>
+                                                    
+              
+                                                </table>                                           
+                                            </div> <!-- end preview-->
+                                        
+                                     
+                                        </div> <!-- end tab-content-->
                         
                     </div>
                      <!-- End Content -->

@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categorie extends Model
 {
-//    use HasFactory;
-   protected $fillable = ['nom_categorie', 'nombre_chaussures'];
+   use HasFactory;
+   protected $fillable = ['nom_categorie', 'description'];
 
    public function chaussure() {
        return $this->hasMany(Chaussure::class);

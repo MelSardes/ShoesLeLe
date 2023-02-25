@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categorie;
+use App\Models\Chaussure;
 use Illuminate\Support\Facades\DB;
 
 class WelcomeController extends Controller

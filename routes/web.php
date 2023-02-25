@@ -7,6 +7,7 @@ use App\Http\Controllers\Front\FrontChaussureController;
 use App\Http\Controllers\Front\PanierController;
 use App\Http\Controllers\Front\WelcomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +20,13 @@ use Illuminate\Support\Facades\Route;
 |
 //*/
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::prefix('admin')->group(function () {
     // connexion_page
-    Route::get('/', [AdminConnexionController::class, 'index'])->name('admin.index');
+    Route::get('/',                             [AdminConnexionController::class, 'index'])->name('admin.index');
     // ouverture page dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/dashboard',                    [DashboardController::class, 'index'])->name('admin.dashboard');
     // CHAUSSURES
-    Route::get('/chaussures', [ChaussureController::class, 'index'])->name('admin.chaussures');
+    Route::get('/chaussures',                   [ChaussureController::class, 'index'])->name('admin.chaussures');
     Route::get('/chaussure/create',            [ChaussureController::class, 'create'])->name('admin.chaussure.create');
     Route::post('/chaussure/store',             [ChaussureController::class, 'store'])->name('admin.chaussure.store');
     Route::get('/chaussure/{chaussure}',       [ChaussureController::class, 'show'])->name('admin.chaussure.show');
@@ -38,7 +35,10 @@ Route::prefix('admin')->group(function () {
     Route::delete('/chaussure/{chaussure}',     [ChaussureController::class, 'destroy'])->name('admin.chaussure.destroy');
 
     //CATEGORIE
-    Route::get('/categorie', [FrontChaussureController::class, 'index'])->name('admin.categorie');
+    Route::get('/categorie',                   [CategorieController::class, 'index'])->name('admin.categorie');
+    Route::get('/categorie/create',            [CategorieController::class, 'create'])->name('admin.categorie.create');
+    Route::post('/categorie/store',            [CategorieController::class, 'store'])->name('admin.categorie.store');
+    Route::delete('/categorie/{categorie}',     [CategorieController::class, 'destroy'])->name('admin.categorie.destroy');
 });
 
 
@@ -63,3 +63,15 @@ Route::prefix('panier')->group(function () {
 
 
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
+
+Auth::routes();
+
+
+Route::prefix('/')->group(function () {
+
+    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('',     [App\Http\Controllers\Fronts\WelcomeController::class, 'index'])->name('welcome');
+    Route::get('', function () {
+        return view('welcome');
+    });
+});
