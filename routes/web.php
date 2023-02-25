@@ -4,6 +4,9 @@ use App\Http\Controllers\Admin\ChaussureController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\AdminConnexionController;
 use App\Http\Controllers\Admin\CategorieController;
+use App\Http\Controllers\Front\FrontChaussureController;
+use App\Http\Controllers\Front\WelcomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +33,7 @@ Route::prefix('admin')->group(function () {
     Route::get( '/chaussure/{chaussure}/edit',  [ChaussureController::class, 'edit'])   ->name('admin.chaussure.edit');
     Route::put( '/chaussure/{chaussure}',       [ChaussureController::class, 'update']) ->name('admin.chaussure.update');
     Route::delete('/chaussure/{chaussure}',     [ChaussureController::class, 'destroy']) ->name('admin.chaussure.destroy');
-    
+
     //CATEGORIE
     Route::get( '/categorie',                   [CategorieController::class,'index'])->name('admin.categorie');
     Route::get( '/categorie/create',            [CategorieController::class,'create'])->name('admin.categorie.create');
@@ -39,3 +42,25 @@ Route::prefix('admin')->group(function () {
 
 });
 
+
+    Route::prefix('categories')->group(function () {
+        Route::get("/", [WelcomeController::class, 'index'])    ->name('categories');
+
+        Route::get('/{categorie}',              [FrontChaussureController::class, 'index'])  ->name('chaussures.index');
+        Route::get('/{categorie}/{chaussure}',  [FrontChaussureController::class, 'show'])   ->named('chassure.show');
+    });
+
+
+    Route::get('/',[WelcomeController::class, 'index'])->name('index');
+
+    Auth::routes();
+
+        
+    Route::prefix('/')->group(function () {
+
+        Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('',     [App\Http\Controllers\Fronts\WelcomeController::class, 'index'])  ->name('welcome');
+        Route::get('', function(){
+            return view('welcome');
+        });
+    });

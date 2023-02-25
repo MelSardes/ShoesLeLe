@@ -17,7 +17,6 @@ class ChaussureController extends Controller
     }
 
 
-
     public function create() {
         //Retourne la vue du formulaire de création
         $categories=Categorie::latest()->get();
