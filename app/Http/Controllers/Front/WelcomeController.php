@@ -9,13 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class WelcomeController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $chaussures = DB::table('chaussures')->get();
         $categories = DB::table('categories')->get();
 
-        return view('welcome', compact('chaussures','categories'));
-        // $chaussures=Chaussure::latest()->get();
-        // $categories=Categorie::latest()->get();
-        // return view('welcome', compact('categories', 'chaussures'));
+        return view('front.index', compact('chaussures', 'categories'));
     }
 }
