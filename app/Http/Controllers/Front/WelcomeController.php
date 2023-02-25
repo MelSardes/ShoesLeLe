@@ -7,10 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class WelcomeController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $chaussures = DB::table('chaussures')->get();
         $categories = DB::table('categories')->get();
 
-        return view('front.index', compact('chaussures'));
+        return view('front.index', compact('chaussures', 'categories'));
     }
 }

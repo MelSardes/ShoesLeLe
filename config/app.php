@@ -195,6 +195,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Le service provider de l'application
+        App\Providers\PanierServiceProvider::class
+
     ],
 
     /*
