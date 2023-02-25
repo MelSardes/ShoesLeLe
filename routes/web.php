@@ -47,7 +47,7 @@ Route::prefix('admin')->group(function () {
         Route::get("/", [WelcomeController::class, 'index'])    ->name('categories');
 
         Route::get('/{categorie}',              [FrontChaussureController::class, 'index'])  ->name('chaussures.index');
-        Route::get('/{categorie}/{chaussure}',  [FrontChaussureController::class, 'show'])   ->named('chassure.show');
+        Route::get('/{categorie}/{chaussure}',  [FrontChaussureController::class, 'show'])   ->name('chaussure.show');
     });
 
 
@@ -56,11 +56,11 @@ Route::prefix('admin')->group(function () {
     Auth::routes();
 
         
-    Route::prefix('/')->group(function () {
+    Route::prefix('/')->group(function () { 
 
         Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-        Route::get('',     [App\Http\Controllers\Fronts\WelcomeController::class, 'index'])  ->name('welcome');
-        Route::get('', function(){
-            return view('welcome');
-        });
+        Route::get('',     [WelcomeController::class, 'index'])  ->name('welcome');
+        Route::get( 'client/{chaussure}',       [FrontChaussureController::class, 'show'])   ->name('welcome.show');
+
+       
     });
