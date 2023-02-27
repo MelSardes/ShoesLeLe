@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Front;
-
+use App\Contracts\AttributeContract;
 use App\Http\Controllers\Controller;
 use App\Models\Categorie;
 use App\Models\Chaussure;
@@ -29,4 +29,5 @@ class FrontChaussureController extends Controller
     {
         return view('front.chaussure', compact('chaussure'));
     }
+
 }

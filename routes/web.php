@@ -87,3 +87,12 @@ Route::get('/', [WelcomeController::class, 'index'])->name('index');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('/')->group(function () {
+
+    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('',     [App\Http\Controllers\Fronts\WelcomeController::class, 'index'])->name('welcome');
+    Route::get('', function () {
+        return view('welcome');
+    });
+});
