@@ -117,22 +117,22 @@
    
 </li>
 
-
+<!-- 
 <li class="side-nav-item">
     <a style="height:60px;font-size:15px" href="a.php" class="side-nav-link">
         <i class="dripicons-user"></i>
         <span>Mon profil</span>
-        <!-- <span class="badge bg-warning rounded-pill float-end">0</span> -->
+        <span class="badge bg-warning rounded-pill float-end">0</span>
     </a>
-</li>
+</li> -->
 
-<li class="side-nav-item">
+<!-- <li class="side-nav-item">
     <a style="height:60px;font-size:15px" href="entreprise.php" class="side-nav-link">
         <i class="dripicons-briefcase"></i>
         <span>Commandes</span>
-        <!-- <span class="badge bg-warning rounded-pill float-end">0</span> -->
+        <span class="badge bg-warning rounded-pill float-end">0</span>
     </a>
-</li>
+</li> -->
 <li class="side-nav-item">
     <a style="height:60px;font-size:15px" href="{{route('admin.chaussures')}}" class="side-nav-link">
         <i class="uil-newspaper"></i>
@@ -231,7 +231,8 @@
                                                                             <form action="#" class="ps-3 pe-3">
                                                                             <div class="mb-3">
                                                                                     <label  class="form-label">Photo</label>
-                                                                                    <img src="{{ $chaussure->image }}" alt="">
+                                                                                    <img name="image" src="{{ asset('/'.$chaussure-> image) }}" alt="Image de chaussure" style="max-width: 90px;">
+                                                                                
                                                                                 </div>
                                                                                 <div class="mb-3">
                                                                                     <label  class="form-label">Nom de la chaussure</label>
@@ -254,7 +255,7 @@
                                                                                
                                                                                 <div class="mb-3">
                                                                                     <label  class="form-label">Description</label>
-                                                                                    <textarea name="description" disabled="" cols="45" rows="3">{{ $chaussure->description }}</textarea>
+                                                                                    <textarea class="form-control" name="description" disabled="" cols="45" rows="3">{{ $chaussure->description }}</textarea>
                                                                                     
                                                                                 </div>
                                                                                
@@ -286,13 +287,20 @@
                                                                         
                                                                         @csrf
                                                                         @method('PUT')
-                                                                            <div class="mb-3">
+
+                                                                        <div class="mb-3">
+                                                                                    
+                                                                                    <img name="image" src="{{ asset('/'.$chaussure-> image) }}" alt="Image de chaussure" style="max-width: 90px;">
+                                                                                </div>
+                                                                        
+                                                                                <div class="mb-3">
                                                                                     <label  class="form-label">Nom de la chaussure</label>
                                                                                     <input name="nom_chaussure"  class="form-control" type="text" value="{{ $chaussure->nom_chaussure }}" >
                                                                                 </div>
                                                                                 <div class="mb-3">
                                                                                     <label for="example-select" class="form-label"></label>
-                                                                                    <select required type="select" class="form-select" name="categorie_id" id="categ" placeholder="categorie" rows="3">
+                                                                                    <select type="select" class="form-select" name="categorie_id" id="categ"  placeholder="categorie" rows="3">
+                                                                                        <option value="">{{ $chaussure->categorie_id }}</option>
                                                                                     @foreach ($categories as $cat)
                                                                                     <option value="{{ $cat->id }}">{{ $cat->nom_categorie }}</option>
                                                                                     @endforeach
@@ -346,6 +354,8 @@
                                                                         @csrf
                                                                         @method('DELETE')
                                                                     <div class="text-center">
+                                                                    <img name="image" src="{{ asset('/'.$chaussure-> image) }}" alt="Image de chaussure" style="max-width: 90px;">
+                                                                                <br>
                                                                         <i class="dripicons-warning h1"></i>
                                                                         <h4 class="mt-2">Supprimer!</h4>
                                                                         <p class="mt-3">Etes vous sur de vouloir supprimer la chaussure: <strong>{{ $chaussure->nom_chaussure }}</strong></p>

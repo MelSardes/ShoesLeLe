@@ -62,12 +62,42 @@ class CategorieController extends Controller
 
 
 
-    public function update(Int $id) {
+    public function update(Request $request, Categorie $categorie) {
         // Récupere les données du formulaire de modification
         // Modifie la ligne de la table dans la base de données
         // Redirige vers la vue index
-    }
+        $rules = [
+            'nom_categorie' => 'required',
+            'description'=>'',
+            // "image"  => 'bail|required|image|mimes:jpg,png,jpeg|max:1024',
+        ];
+        // $chemin_image = $request->image->store("chaussures");
 
+        // if ($request->has("chaussures")) {
+            // On ajoute la règle de validation pour "picture"
+            // $rules["chaussures"] = 'bail|required|image|max:1024';
+        // }
+        $this->validate($request, $rules);
+        // 2. On upload l'image dans "/storage/app/public/posts"
+        // if ($request->has("image")) {
+
+            //On supprime l'ancienne image
+            // Chaussure::destroy($chaussure->image);
+
+            $categorie->update([
+            "nom_categorie" => $request->nom_categorie,
+            "description" => $request->description,
+            
+            // "image" => isset($chemin_image) ? $chemin_image : $chaussure->image,
+                
+            ]);
+
+           
+        // }
+         // 4. On affiche le Post modifié : route("posts.show")
+            return redirect(route("admin.categorie", $categorie));
+    
+    }
 
 
     public function destroy(Categorie $categorie) {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    
+//     public function showLoginForm()
+// {
+//     return view('auth.login');
+// }
+
     public function index()
     {
         return view('home');
+    }
+    
+    public function show()
+    {
+        $chaussures = DB::table('chaussures')->get();
+        $categories = DB::table('categories')->get();
+
+        return view('home', compact('chaussures', 'categories'));
     }
 }

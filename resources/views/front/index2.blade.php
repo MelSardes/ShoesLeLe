@@ -1,4 +1,4 @@
-@extends('layout/front/master')
+@extends('home')
 
 @section('content')
     <div id="main" class="site-main full-width wide-page">
@@ -573,11 +573,14 @@
                                                                                                                                     {{ $chaussure->nom_chaussure }}
                                                                                                                                     </h3>
                                                                                                                                 </a>
-
-                                                                                                                                <span
-                                                                                                                                    class="price"><span
-                                                                                                                                        class="woocommerce-Price-amount amount"><bdi>{{ $chaussure->prix }}
-                                                                                                                                            Fcfa</bdi></span></span>
+<!-- 
+                                                                                                                                <span class="price">
+                                                                                                                                    <span
+                                                                                                                                        class="woocommerce-Price-amount amount">
+                                                                                                                                        <bdi>{{ $chaussure->prix }}
+                                                                                                                                            Fcfa</bdi>
+                                                                                                                                    </span>
+                                                                                                                                </span> -->
                                                                                                                                 <div
                                                                                                                                     class="price-block">
                                                                                                                                 </div>

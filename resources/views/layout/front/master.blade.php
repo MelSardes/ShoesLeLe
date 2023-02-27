@@ -1341,7 +1341,7 @@
                         <!-- Header Mob LOGO-->
                         <div class="header-mob-logo">
                             <a href="index.html" title="Shoeser" rel="home">
-                                <img alt="shoeser" src="wp-content/uploads/2022/10/logo.svg" width="100"/> </a>
+                                <img alt="shoeser" src="{{asset('wp-content/uploads/2022/10/logo.svg')}}" width="100"/> </a>
                         </div>
                         <!-- Header Search start -->
                         <div class="header-search">
@@ -1351,7 +1351,7 @@
                                 <label class="screen-reader-text" for="woocommerce-product-search-field-0">Search
                                     for:</label>
                                 <input type="search" id="woocommerce-product-search-field-0" class="search-field"
-                                       placeholder="Search products&hellip;" value="" name="s"/>
+                                       placeholder="Rechecher&hellip;" value="" name="s"/>
                                 <button type="submit" value="Search" class="">Search</button>
                                 <input type="hidden" name="post_type" value="product"/>
                             </form>
@@ -1575,22 +1575,29 @@
                             </div>
                         </nav>
 
+                        <button  type="button" class="btn btn-info">
+                            <a href="{{ route('login')}}" style="color:white;">CONNEXION</a>
+                        </button>
+                                     
+
                         <!-- Topbar link -->
                         <div class="account-link">
-                            <span class="account-icon"></span>
+                            <!-- <span class="account-icon">Connexion</span> -->
 
-                            <span class="account-label">My Account</span>
-                            <div class="account-link-wrapper">
-                                <div class="account-menu-links">
-                                    <a href="my-account/index.html">Login</a>
-                                    <ul id="menu-header-top-links" class="header-top-link">
-                                        <li id="menu-item-20759"
+                            <!-- <span class="account-label">Mon compte</span>
+                            <div class="account-link-wrapper"> -->
+                                <!-- <div class="account-menu-links">
+                                    <a href="a.html">Se connecter</a>
+                                    <ul id="menu-header-top-links" class="header-top-link"> -->
+                                        <!-- <li id="menu-item-20759"
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20759">
-                                            <a href="my-account/index.html">My Account</a></li>
+                                            <a href="{{route('register')}}">S'inscrire</a>
+                                        </li>
                                         <li id="menu-item-20760"
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20760">
-                                            <a href="checkout/index.html">Checkout</a></li>
-                                        <li id="menu-item-20761"
+                                            <a href="{{route('login')}}">Se connecter</a>
+                                        </li> -->
+                                        <!-- <li id="menu-item-20761"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20761">
                                             <a href="my-account/orders/index.html">My Order</a></li>
                                         <li id="menu-item-20762"
@@ -1598,14 +1605,15 @@
                                             <a href="wishlist/index.html">My Wishlist</a></li>
                                         <li id="menu-item-20763"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20763">
-                                            <a href="my-account/downloads/index.html">My Download</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                                            <a href="my-account/downloads/index.html">My Download</a>
+                                        </li> -->
+                                    <!-- </ul>
+                                </div> -->
+                            <!-- </div> -->
                         </div>
-
+                        
                         <a class="whislist-counter" href=wishlist/index.html><span
-                                class="whislist-label">Wishlist</span></a>
+                                class="account-icon"></span></a>
                         <div class="header-cart headercart-block">
                             <div class="cart togg">
 
@@ -1631,7 +1639,7 @@
                 <!-- End header-top -->
 
                 <!-- End header-top -->
-                <div class="header-bottom">
+                <!-- <div class="header-bottom">
                     <div class="header-bottom-container">
                         <nav id="site-navigation" class="navigation-bar main-navigation">
                             <a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to
@@ -1842,7 +1850,7 @@
                             </div>
                         </nav>
                     </div>
-                </div>
+                </div> -->
             </div>
         </header>
 

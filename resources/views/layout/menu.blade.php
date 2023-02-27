@@ -4,7 +4,7 @@
         <!-- User Profile-->
         <div class="user-profile">
             <div class="user-pro-body">
-                <div><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"></div>
+                <div><img src="{{asset('assets/images/users/2.jpg')}}" alt="user-img" class="img-circle"></div>
                 <div class="dropdown">
                     <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Steave Gection <span class="caret"></span></a>
                     <div class="dropdown-menu animated flipInY">
@@ -33,7 +33,7 @@
                 <li class="nav-small-cap">--- PERSONAL</li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{route("produit.create")}}">Suite</a></li>
+                        <li><a href="{{route('produit.create')}}">Suite</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Apps</span></a>
