@@ -19,7 +19,7 @@ class PanierController extends Controller
     # afficher le panier
     public function show()
     {
-        return view("front.panier.show");
+        return view("front.panier.show1");
     }
 
     # Ajout d'un produit au panier

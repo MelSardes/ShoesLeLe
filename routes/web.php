@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\ChaussureController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FactureController;
 use App\Http\Controllers\AdminConnexionController;
 use App\Http\Controllers\Front\FrontChaussureController;
+use App\Http\Controllers\Front\FrontCommandeController;
 use App\Http\Controllers\Front\PanierController;
 use App\Http\Controllers\Front\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -62,16 +64,26 @@ Route::prefix('panier')->group(function () {
 });
 
 
+Route::prefix('commande')->group(function () {
+    Route::get('/', [FrontCommandeController::class, 'precommande'])->name('commande.precommande');
+    Route::post('/store', [FrontCommandeController::class, 'store'])->name('commande.store');
+    Route::post('/telecharger_facture/{commande_id}', [FrontCommandeController::class, 'telechargerFacture'])->name('facture.telecharger');
+});
+
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
+
+// Auth::routes();
+
+
+// Route::prefix('/')->group(function () {
+
+//     Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//     Route::get('',     [App\Http\Controllers\Fronts\WelcomeController::class, 'index'])->name('welcome');
+//     Route::get('', function () {
+//         return view('welcome');
+//     });
+// });
 
 Auth::routes();
 
-
-Route::prefix('/')->group(function () {
-
-    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('',     [App\Http\Controllers\Fronts\WelcomeController::class, 'index'])->name('welcome');
-    Route::get('', function () {
-        return view('welcome');
-    });
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+
+    'admin_email' => 'melsardes2000@gmail.com',
+    'admin_mobile' => '(+241) 66 15 77 70',
+    'shop_address' => '622, Ozangue, Libreville, Estuaire',
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -181,7 +188,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Barryvdh\DomPDF\ServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -213,6 +220,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ])->toArray(),
 
 ];
