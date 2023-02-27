@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class LigneCommande extends Model
 {
-//    use HasFactory;
+    //    use HasFactory;
 
     protected $fillable = [
         'chaussure_id',
@@ -16,14 +15,13 @@ class LigneCommande extends Model
         'quantite'
     ];
 
-    function ligneCommande() {
+    function commande()
+    {
         return $this->belongsTo(Commande::class);
     }
 
-    function chaussure() {
+    function chaussure()
+    {
         return $this->belongsTo(Chaussure::class);
     }
-
-
-
 }

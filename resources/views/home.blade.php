@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-US">
+@extends('layouts.app')
 
 <!-- Mirrored from demos.coderplace.com/woo/WCM01/WCM01004/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Feb 2023 13:54:01 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
 <head>
     <meta charset="UTF-8">

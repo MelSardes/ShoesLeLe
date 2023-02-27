@@ -7,25 +7,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class Commande extends Model
 {
-//    use HasFactory;
+    //    use HasFactory;
 
     protected $fillable = [
         'client_id',
-        'prix_total'
+        'prix_total',
+        'status'
     ];
 
-    function ligneCommande() {
+    function ligneCommande()
+    {
         return $this->belongsToMany(LigneCommande::class);
     }
 
-    public function facture() {
+    public function facture()
+    {
         return $this->hasOne(Facture::class);
     }
 
-    public function client() {
+    public function client()
+    {
         return $this->belongsTo(Client::class);
     }
-
-
-
 }

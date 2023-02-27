@@ -21,6 +21,7 @@ class PanierSessionRepository implements PanierInterfaceRepository
 
         // Les informations du produit à ajouter
         $details_chaussure = [
+            'id' => $chaussure->id,
             'nom_chaussure' => $chaussure->nom_chaussure,
             'prix' => $chaussure->prix,
             'quantite' => $quantite
