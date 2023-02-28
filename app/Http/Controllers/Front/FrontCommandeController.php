@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\PHPMailerController;
+use App\Models\Chaussure;
 use App\Models\Commande;
 use App\Models\Facture;
 use App\Models\LigneCommande;
@@ -35,6 +37,7 @@ class FrontCommandeController extends Controller
 
 
         if (session()->has('panier')) {
+
             DB::transaction(function () {
                 $total = 0;
 
@@ -50,6 +53,11 @@ class FrontCommandeController extends Controller
                 ]);
 
                 foreach (session('panier') as $key => $chaussure) {
+                    $shoe = Chaussure::find($chaussure['id']);
+                    if ($shoe->nombre_disponible < $chaussure['quantite']) {
+                        return redirect()->back()->with('diponibilite', 'Pas assez de chaussures' . $shoe->nom_chaussure . ' dans le stock');
+                    }
+
                     // $total += $chaussure['prix'] * $chaussure['quantite'];
 
                     DB::table('lignes_commande')->insert([
@@ -59,6 +67,12 @@ class FrontCommandeController extends Controller
                         "quantite" => $chaussure['quantite']
                     ]);
 
+                    // DB::table('chaussures')
+                    //     ->decrement(
+                    //         'nombre_disponible',
+                    //         $chaussure['quantite'],
+                    //         ['id' => $chaussure['id']]
+                    //     );
                     // DB::table('chaussure')->delete([]);
 
                     // Chaussure::
@@ -72,10 +86,15 @@ class FrontCommandeController extends Controller
 
             // $commande_id = Commande::getPdo()->lastInsertId();
 
+            $objet = "Commande en cours de traitement";
+            $corps = "Votre commande a bien été envoyée. Vous recevrez d'ici peut une confirmation d'expédition";
+
+            $mailerController = new PHPMailerController;
+            $mailerController->composeEmail($request, $objet, $corps);
 
             return redirect()->route('home')->with('success', 'Votre commande a bien été soumise. Vous recevrez un mail dans quelques instants');
         } else {
-            return redirect()->route('commande.precommande')->with('success', 'Une erreur s\'est produite lors de la soummission de votre commande');
+            return redirect()->route('commande.precommande')->with('erreur', 'Une erreur s\'est produite lors de la soummission de votre commande');
         }
     }
 

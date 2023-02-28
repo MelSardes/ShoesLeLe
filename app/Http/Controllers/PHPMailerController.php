@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use PHPMailer\PHPMailer\Exception;
 use Illuminate\Http\Request;
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
 class PHPMailerController extends Controller
 {
@@ -16,7 +17,7 @@ class PHPMailerController extends Controller
 
 
     // ========== [ Compose Email ] ================
-    public function composeEmail(Request $request)
+    public function composeEmail(Request $request, string $objet, string $corps)
     {
         require base_path("vendor/autoload.php");
         $mail = new PHPMailer(true);     // Passing `true` enables exceptions
@@ -24,33 +25,33 @@ class PHPMailerController extends Controller
         try {
 
             // Email server settings
-            $mail->SMTPDebug = 0;
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
-            $mail->Host = 'smtp.example.com';             //  smtp host
+            $mail->Host = 'smtp.gmail.com';             //  smtp host
             $mail->SMTPAuth = true;
             $mail->Username = 'loickmakosso@gmail.com';   //  sender username
-            $mail->Password = '**********';       // sender password
-            $mail->SMTPSecure = 'tls';                  // encryption - ssl/tls
-            $mail->Port = 587;                          // port - 587/465
+            $mail->Password = 'qqdfxmgezrvqahlk';       // sender password
+            $mail->SMTPSecure =  PHPMailer::ENCRYPTION_SMTPS;                  // encryption - ssl/tls
+            $mail->Port = 465;                          // port - 587/465
 
-            $mail->setFrom('sender@example.com', 'SenderName');
-            $mail->addAddress($request->emailRecipient);
-            $mail->addCC($request->emailCc);
-            $mail->addBCC($request->emailBcc);
+            $mail->setFrom('loickmakosso@gmail.com', 'Shoes LeLe');
+            $mail->addAddress($request->mail);
+            // $mail->addCC($request->emailCc);
+            // $mail->addBCC($request->emailBcc);
 
-            $mail->addReplyTo('sender@example.com', 'SenderReplyName');
+            $mail->addReplyTo('info.loickmakosso@gmail.com', 'Sardes');
 
-            if (isset($_FILES['emailAttachments'])) {
-                for ($i = 0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
-                    $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
-                }
-            }
+            // if (isset($_FILES['emailAttachments'])) {
+            //     for ($i = 0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
+            //         $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
+            //     }
+            // }
 
 
             $mail->isHTML(true);                // Set email content format to HTML
 
-            $mail->Subject = $request->emailSubject;
-            $mail->Body    = $request->emailBody;
+            $mail->Subject = $objet;
+            $mail->Body    = $corps;
 
             // $mail->AltBody = plain text version of email body;
 

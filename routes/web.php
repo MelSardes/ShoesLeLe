@@ -11,6 +11,7 @@ use App\Http\Controllers\Front\FrontChaussureController;
 use App\Http\Controllers\Front\FrontCommandeController;
 use App\Http\Controllers\Front\PanierController;
 use App\Http\Controllers\Front\WelcomeController;
+use App\Http\Controllers\PHPMailerController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -53,22 +54,22 @@ Route::prefix('admin')->group(function () {
 });
 
 
-    Route::prefix('categories')->group(function () {
-    // Route::get("/", [FrontChaussureController::class, 'index'])->name('categories');
-    Route::get('/{categorie}',                  [FrontChaussureController::class, 'showAll'])->name('categorie.show');
+Route::prefix('categories')->group(function () {
+    Route::get("/", [FrontChaussureController::class, 'index'])->name('categories');
+    Route::get('/{categorie}', [FrontChaussureController::class, 'showAll'])->name('categorie.show');
 });
 
 
 // Les routes de gestion du panier
     Route::prefix('chaussure')->group(function () {
-        Route::get('/{chaussure}',              [FrontChaussureController::class, 'show'])->name('chaussure.show');
+        Route::get('/{chaussure}', [FrontChaussureController::class, 'show'])->name('chaussure.show');
     });
 
     Route::prefix('panier')->group(function () {
-        Route::get('/',                         [PanierController::class, 'show'])->name('panier.show');
-        Route::post('/add/{chaussure}',         [PanierController::class, 'add'])->name('panier.add');
-        Route::get('/remove/{chaussure}',       [PanierController::class, 'remove'])->name('panier.remove');
-        Route::get('/empty',                    [PanierController::class, 'empty'])->name('panier.empty');
+        Route::get('/', [PanierController::class, 'show'])->name('panier.show');
+        Route::post('/add/{chaussure}', [PanierController::class, 'add'])->name('panier.add');
+        Route::get('/remove/{chaussure}', [PanierController::class, 'remove'])->name('panier.remove');
+        Route::get('/empty', [PanierController::class, 'empty'])->name('panier.empty');
     });
 
 
@@ -94,20 +95,18 @@ Route::get('/', [WelcomeController::class, 'index'])->name('index');
 
 Auth::routes();
 
-        
-    Route::prefix('/')->group(function () {
-        // Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
-        Route::get('home', [WelcomeController::class, 'indexConnexion'])->name('home');
-        Route::get('deconnexion',[App\Http\Controllers\AuthController::class, 'deconnexion'])->name('deconnexion');
-        Route::get('front/account/profil/index', [WelcomeController::class, 'profil'])->name('profil');
-        Route::get('front/account/commande/index', [WelcomeController::class, 'commande'])->name('commande');
-        Route::get('front/account/commande/index', [WelcomeController::class, 'listeCommande'])->name('commande');
-        Route::get('front/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboard');
-        // Route::get('front/dashboard', [WelcomeController::class, 'compter'])->name('compter');
 
+Route::prefix('/')->group(function () {
+    // Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
+    Route::get('home', [WelcomeController::class, 'indexConnexion'])->name('home');
+    Route::get('deconnexion', [App\Http\Controllers\AuthController::class, 'deconnexion'])->name('deconnexion');
+    Route::get('front/account/profil/index', [WelcomeController::class, 'profil'])->name('profil');
+    Route::get('front/account/commande/index', [WelcomeController::class, 'commande'])->name('commande');
+    Route::get('front/account/commande/index', [WelcomeController::class, 'listeCommande'])->name('commande');
+    Route::get('front/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboard');
+    // Route::get('front/dashboard', [WelcomeController::class, 'compter'])->name('compter');
+});
 
-        // Route::get('',     [App\Http\Controllers\Fronts\WelcomeController::class, 'index'])  ->name('welcome');
-        // Route::get('', function(){
-        //     return view('welcome');
-        // });
-    });
+Route::get("/email", [PHPMailerController::class, "email"])->name("email");
+
+Route::post("/send-email", [PHPMailerController::class, "composeEmail"])->name("send-email");
