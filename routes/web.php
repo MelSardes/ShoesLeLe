@@ -8,6 +8,7 @@ use App\Http\Controllers\Front\FrontChaussureController;
 use App\Http\Controllers\Front\FrontCommandeController;
 use App\Http\Controllers\Front\PanierController;
 use App\Http\Controllers\Front\WelcomeController;
+use App\Http\Controllers\PHPMailerController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -88,11 +89,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('/')->group(function () {
+Route::get("/email", [PHPMailerController::class, "email"])->name("email");
 
-    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('',     [App\Http\Controllers\Fronts\WelcomeController::class, 'index'])->name('welcome');
-    Route::get('', function () {
-        return view('welcome');
-    });
-});
+Route::post("/send-email", [PHPMailerController::class, "composeEmail"])->name("send-email");
