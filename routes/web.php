@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\CategorieController;
 use App\Http\Controllers\Admin\ChaussureController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FactureController;
 use App\Http\Controllers\AdminConnexionController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Front\FrontChaussureController;
 use App\Http\Controllers\Front\FrontCommandeController;
 use App\Http\Controllers\Front\PanierController;
@@ -41,13 +43,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/categorie',                   [CategorieController::class, 'index'])->name('admin.categorie');
     Route::get('/categorie/create',            [CategorieController::class, 'create'])->name('admin.categorie.create');
     Route::post('/categorie/store',            [CategorieController::class, 'store'])->name('admin.categorie.store');
+    Route::put('/categorie/{categorie}',       [CategorieController::class, 'update'])->name('admin.categorie.update');
     Route::delete('/categorie/{categorie}',     [CategorieController::class, 'destroy'])->name('admin.categorie.destroy');
 });
 
 
 Route::prefix('categories')->group(function () {
     Route::get("/", [FrontChaussureController::class, 'index'])->name('categories');
-
     Route::get('/{categorie}', [FrontChaussureController::class, 'showAll'])->name('categorie.show');
 });
 
@@ -87,7 +89,17 @@ Route::get('/', [WelcomeController::class, 'index'])->name('index');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('/')->group(function () {
+    // Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
+    Route::get('home', [WelcomeController::class, 'indexConnexion'])->name('home');
+    Route::get('deconnexion', [App\Http\Controllers\AuthController::class, 'deconnexion'])->name('deconnexion');
+    Route::get('front/account/profil/index', [WelcomeController::class, 'profil'])->name('profil');
+    Route::get('front/account/commande/index', [WelcomeController::class, 'commande'])->name('commande');
+    Route::get('front/account/commande/index', [WelcomeController::class, 'listeCommande'])->name('commande');
+    Route::get('front/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboard');
+    // Route::get('front/dashboard', [WelcomeController::class, 'compter'])->name('compter');
+});
 
 Route::get("/email", [PHPMailerController::class, "email"])->name("email");
 

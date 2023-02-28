@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
         <meta charset="utf-8" />
-        <title>ESPACE</title>
+        <title>Espace producteurs</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -33,12 +33,12 @@
             <div class="container-fluid">
 
                 <!-- LOGO -->
-                <a href="../index.php" class="topnav-logo">
+                <a href="{{route('home')}}" class="topnav-logo">
                     <span class="topnav-logo-lg">
-                        <img src="{{asset('assets/images/logo_prod.png')}}" alt="" height="46">
+                        <img src="{{ asset('chaussures/thq7mDwrehD5unNW0Oov4FdTlFFKTebWmN8F42Rr.jpg') }}" alt="" height="46">
                     </span>
                     <span class="topnav-logo-sm">
-                        <img src="{{asset('assets/images/logo_prod.png')}}" alt="" height="46">
+                        <img src="{{ asset('chaussures/thq7mDwrehD5unNW0Oov4FdTlFFKTebWmN8F42Rr.jpg') }}" alt="" height="46">
                     </span>
                 </a>
 
@@ -51,8 +51,8 @@
                                 <img  src="" class="rounded-circle">
                             </span>
                             <span>
-                                <span class="account-user-name"></span>
-                                <span class="account-position">Administrateur</span>
+                            <span class="account-user-name">{{ Auth::user()->name }}</span>
+                                <span class="account-position">Client</span>
                                 
                             </span>
                         </a>
@@ -60,13 +60,13 @@
                             
     
                             <!-- item-->
-                            <a href="../producteur_dashboard/profil.php" class="dropdown-item notify-item">
+                            <a href="" class="dropdown-item notify-item">
                                 <i class="mdi mdi-account-circle me-1"></i>
-                                <span>Mon profil</span>
+                                {{ Auth::user()->email }}
                             </a>
 
                             <!-- item-->
-                            <a href="../traitement/deconnexion/deconnexion.php" class="dropdown-item notify-item">
+                            <a href="{{ route('deconnexion') }}" class="dropdown-item notify-item">
                                 <i class="mdi mdi-logout me-1"></i>
                                 <span>Deconnexion</span>
                             </a>
@@ -114,7 +114,7 @@
                         </small>
 </div> -->
 <li class="side-nav-item">
-    <a style="height:60px;font-size:15px"  href="{{route('admin.dashboard')}}" class="side-nav-link">
+    <a style="height:60px;font-size:15px"  href="{{route('dashboard')}}" class="side-nav-link">
         <i class="uil-home-alt"></i>
         <!-- <span class="badge bg-info rounded-pill float-end">4</span> -->
         <span>Tableau de bord</span>
@@ -122,35 +122,20 @@
    
 </li>
 
-<!-- 
-<li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="profil.php" class="side-nav-link">
-        <i class="dripicons-user"></i>
-        <span>Mon profil</span>
-        <span class="badge bg-warning rounded-pill float-end">0</span>
-    </a>
-</li> -->
 
 <li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="entreprise.php" class="side-nav-link">
-        <i class="dripicons-briefcase"></i>
-        <span>Commandes</span>
+    <a style="height:60px;font-size:15px" href="{{route('profil')}}" class="side-nav-link">
+        <i class="dripicons-user"></i>
+        <span>Mon profil</span>
         <!-- <span class="badge bg-warning rounded-pill float-end">0</span> -->
     </a>
 </li>
-<li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="{{route('admin.chaussures')}}" class="side-nav-link">
-        <i class="uil-newspaper"></i>
-        <span>Chaussures</span>
-<!-- <span class="badge bg-warning rounded-pill float-end"></span> -->
-    </a>
-</li>
 
 <li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="{{route('admin.categorie')}}" class="side-nav-link">
-        <i class="uil-car"></i>
-            <span>Catégories</span>
-            <!-- <span class="badge bg-danger rounded-pill float-end">Nouveau</span> -->
+    <a style="height:60px;font-size:15px" href="{{route('commande')}}" class="side-nav-link">
+        <i class="dripicons-briefcase"></i>
+        <span>Commandes</span>
+        <!-- <span class="badge bg-warning rounded-pill float-end">0</span> -->
     </a>
 </li>
 
@@ -183,15 +168,15 @@
                                         <div class="row g-0">
                                             <div class="col-sm-6 col-lg-3">
 
-                                                <!-- <div class="card shadow-none m-0">
+                                                <div class="card shadow-none m-0">
                                                     <div class="card-body text-center">
                                                  
 
-                                                        <i class="uil-newspaper text-muted" style="font-size: 44px;"></i>
-                                                        <h3><span></span></h3>
-                                                        <p class="text-muted font-15 mb-0">Annonces en cours</p>
+                                                        <i class="dripicons-briefcase" style="font-size: 44px;"></i>
+                                                        <h3><span>{{$compter}}</span></h3>
+                                                        <p class="text-muted font-15 mb-0">Nombre de commandes</p>
                                                     </div>
-                                                </div> -->
+                                                </div>
                                             </div>
                 
                                             <!-- <div class="col-sm-6 col-lg-3">
@@ -204,7 +189,7 @@
                                                 </div>
                                             </div> -->
                 
-                                            <!-- <div class="col-sm-6 col-lg-3">
+                                            <div class="col-sm-6 col-lg-3">
                                                 <div class="card shadow-none m-0 border-start">
                                                     <div class="card-body text-center">
                                                     
@@ -215,7 +200,7 @@
                                                 </div>
                                             </div>
                 
-                                            <div class="col-sm-6 col-lg-6">
+                                            <!-- <div class="col-sm-6 col-lg-6">
                             <div class="card shadow-none m-0 border-start">
                                 <div class="card-body text-center">
                                     <i class="uil-car text-muted" style="font-size: 24px;"></i>

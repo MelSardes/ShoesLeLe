@@ -31,7 +31,7 @@
                                                     class="woocommerce-product-gallery__image flex-active-slide"
                                                     style="width: 382.2px; margin-right: 0px; float: left; display: block; position: relative; overflow: hidden;">
                                                     <a href="{{ asset('front/wp-content/uploads/2022/02/15.jpg') }}"><img
-                                                            src="{{ asset('front/wp-content/uploads/2022/02/15.jpg') }}"
+                                                            src="{{ asset('/'.$chaussure-> image) }}"
                                                             class="wp-post-image" alt="" loading="lazy"
                                                             title="15" data-caption=""
                                                             data-src="https://demos.coderplace.com/woo/WCM01/WCM01004/wp-content/uploads/2022/02/15.jpg"

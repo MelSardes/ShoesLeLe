@@ -118,21 +118,21 @@
 </li>
 
 
-<li class="side-nav-item">
+<!-- <li class="side-nav-item">
     <a style="height:60px;font-size:15px" href="a.php" class="side-nav-link">
         <i class="dripicons-user"></i>
         <span>Mon profil</span>
-        <!-- <span class="badge bg-warning rounded-pill float-end">0</span> -->
+        <span class="badge bg-warning rounded-pill float-end">0</span>
     </a>
-</li>
+</li> -->
 
-<li class="side-nav-item">
+<!-- <li class="side-nav-item">
     <a style="height:60px;font-size:15px" href="entreprise.php" class="side-nav-link">
         <i class="dripicons-briefcase"></i>
         <span>Commandes</span>
-        <!-- <span class="badge bg-warning rounded-pill float-end">0</span> -->
+        <span class="badge bg-warning rounded-pill float-end">0</span>
     </a>
-</li>
+</li> -->
 <li class="side-nav-item">
     <a style="height:60px;font-size:15px" href="{{route('admin.chaussures')}}" class="side-nav-link">
         <i class="uil-newspaper"></i>
@@ -189,6 +189,7 @@
                                                            
                                                             <th>Categorie</th>
                                                             <th>Description</th>
+                                                            <th>Modifier ?</th>
                                                             <th>Supprimer ?</th>
                                                             
                                                         </tr>
@@ -202,10 +203,53 @@
                                                         
                                                         <td>{{ $categorie->nom_categorie }}</td>
                                                         <td>{{ $categorie->description }}</td>
+                                                        <td>
+                                                            <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ $categorie->id }}">
+                                                            <i class="dripicons-pencil"></i></button>
+                                                        </td>
                                                         <td><!-- Danger Alert Modal -->
                                                             <button  type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#danger-alert-modal-{{ $categorie->id }}"><i class=" uil-trash"></i></button>
                                                         </td>
                                                         @endforeach
+                                                        @foreach ($categories as $categorie)
+                                                        <div class="modal fade" id="staticBackdrop-{{ $categorie->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="scrollableModalTitle">Modifications</h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                        <form action="{{route('admin.categorie.update',$categorie)}}" class="ps-3 pe-3" enctype="multipart/form-data" method="post">
+                                                                        
+                                                                        @csrf
+                                                                        @method('PUT')
+                                                                            <div class="mb-3">
+                                                                                    <label  class="form-label">Nom de la categorie</label>
+                                                                                    <input name="nom_categorie"  class="form-control" type="text" value="{{ $categorie->nom_categorie }}" >
+                                                                                </div>
+                                                                                
+
+                                                                                <div class="mb-3">
+                                                                                    <label  class="form-label">Description</label>
+                                                                                    <textarea name="description" class="form-control"  cols="45" rows="3">{{ $categorie->description }}</textarea>
+                                                                                    
+                                                                                </div>
+                                                                            
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                                        <button type="submit" class="btn btn-warning">
+                                                                        Modifier
+                                                                        </button>
+                                                                        
+                                                                    </div> <!-- end modal footer -->
+                                                                    </form>
+                                                                        </div>
+                                                                        
+                                                                    </div><!-- /.modal-content -->
+                                                                </div><!-- /.modal-dialog -->
+                                                            </div><!-- /.modal -->     
+                                                            @endforeach
 
                                                         @foreach ($categories as $categorie)
                                                             <div id="danger-alert-modal-{{ $categorie->id }}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">

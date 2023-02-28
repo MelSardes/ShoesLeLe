@@ -37,7 +37,7 @@ class ChaussureController extends Controller
             'description'=>'',
             'nombre_disponible' => 'required',       
             'marque' => 'required',
-            "image"  => 'bail|required|image|mimes:jpg,png,jpeg|max:1024',
+            "image"  => 'bail|required|image|mimes:jpg,png,jpeg,jfif',
             
            ]);
         

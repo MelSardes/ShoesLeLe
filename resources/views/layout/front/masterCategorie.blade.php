@@ -1329,8 +1329,8 @@
 
         .widget .tnp-email,
         .mc4wp-form input[type="email"],
-        .service-list:hover .service-icon,
-            {
+        .service-list:hover .service-icon
+        {
             border-color: #9F9F9F;
         }
 
