@@ -126,13 +126,13 @@
     </a>
 </li> -->
 
-<!-- <li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="entreprise.php" class="side-nav-link">
+<li class="side-nav-item">
+    <a style="height:60px;font-size:15px" href="{{route('admin.commandes')}}" class="side-nav-link">
         <i class="dripicons-briefcase"></i>
         <span>Commandes</span>
         <span class="badge bg-warning rounded-pill float-end">0</span>
     </a>
-</li> -->
+</li>
 <li class="side-nav-item">
     <a style="height:60px;font-size:15px" href="{{route('admin.chaussures')}}" class="side-nav-link">
         <i class="uil-newspaper"></i>
@@ -163,134 +163,87 @@
                 <!-- Left Sidebar End -->
 
                 <div class="content-page">
-                    <div class="content">
-                        
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    
-                                    <h4 class="page-title">Catégorie</h4>
-                                </div>
+                <div class="content">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+
+                                <h4 class="page-title">MES COMMANDES</h4>
                             </div>
                         </div>
-                        <!-- end page title --> 
-                       
-                        <div class="tab-content">
-                                            <div class="tab-pane show active" id="basic-datatable-preview">
-                                            <button type="submit" class="btn btn-warning rounded-pill" name="valider">
-                                            <a style="text-decoration: none;color: black;font-weight:bold;" href="{{route('admin.categorie.create')}}" >+  Ajouter une catégorie</a>
-                                            </button>
-                                            <br>
-                                            <br>
-                                                <table  class="table table-striped dt-responsive nowrap w-100">
-                                                    <thead>
-                                                        <tr>
-                                                           
-                                                            <th>Categorie</th>
-                                                            <th>Description</th>
-                                                            <th>Modifier ?</th>
-                                                            <th>Supprimer ?</th>
-                                                            
-                                                        </tr>
-                                                    </thead>
-                                                
-                                                
-                                                    <tbody>
-                                                        @php($i=1)
-                                                        @foreach ($categories as $categorie)
-                                                        <tr>
-                                                        
-                                                        <td>{{ $categorie->nom_categorie }}</td>
-                                                        <td>{{ $categorie->description }}</td>
-                                                        <td>
-                                                            <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{ $categorie->id }}">
-                                                            <i class="dripicons-pencil"></i></button>
-                                                        </td>
-                                                        <td><!-- Danger Alert Modal -->
-                                                            <button  type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#danger-alert-modal-{{ $categorie->id }}"><i class=" uil-trash"></i></button>
-                                                        </td>
-                                                        @endforeach
-                                                        @foreach ($categories as $categorie)
-                                                        <div class="modal fade" id="staticBackdrop-{{ $categorie->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h5 class="modal-title" id="scrollableModalTitle">Modifications</h5>
-                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                        <form action="{{route('admin.categorie.update',$categorie)}}" class="ps-3 pe-3" enctype="multipart/form-data" method="post">
-                                                                        
-                                                                        @csrf
-                                                                        @method('PUT')
-                                                                            <div class="mb-3">
-                                                                                    <label  class="form-label">Nom de la categorie</label>
-                                                                                    <input name="nom_categorie"  class="form-control" type="text" value="{{ $categorie->nom_categorie }}" >
-                                                                                </div>
-                                                                                
-
-                                                                                <div class="mb-3">
-                                                                                    <label  class="form-label">Description</label>
-                                                                                    <textarea name="description" class="form-control"  cols="45" rows="3">{{ $categorie->description }}</textarea>
-                                                                                    
-                                                                                </div>
-                                                                            
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                                                                        <button type="submit" class="btn btn-warning">
-                                                                        Modifier
-                                                                        </button>
-                                                                        
-                                                                    </div> <!-- end modal footer -->
-                                                                    </form>
-                                                                        </div>
-                                                                        
-                                                                    </div><!-- /.modal-content -->
-                                                                </div><!-- /.modal-dialog -->
-                                                            </div><!-- /.modal -->     
-                                                            @endforeach
-
-                                                        @foreach ($categories as $categorie)
-                                                            <div id="danger-alert-modal-{{ $categorie->id }}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                                                                <div class="modal-dialog modal-sm">
-                                                                    <div class="modal-content modal-filled bg-danger">
-                                                                    <form action="{{route('admin.categorie.destroy',$categorie)}}" class="ps-3 pe-3" enctype="multipart/form-data" method="post">
-                                                        
-                                                        @csrf
-                                                        @method('DELETE')
-                                                                        <div class="modal-body p-4">
-                                                                            <div class="text-center">
-                                                                                <i class="dripicons-warning h1"></i>
-                                                                                <h4 class="mt-2">Supprimer!</h4>
-                                                                                <p class="mt-3">Etes vous sur de vouloir supprimer <strong>{{ $categorie->nom_categorie }}</strong> ?</p> 
-                                                                                <button type="submit" class="btn btn-warning">
-                                                                                Oui
-                                                                                </button>
-                                                                                <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Non</button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div><!-- /.modal-content -->
-                                                                </div><!-- /.modal-dialog -->
-                                                            </div><!-- /.modal -->
-                                                            </form>
-                                                    
-                                                            @endforeach
-                                                        </tr>
-                                                        
-                                                    </tbody>
-                                                    
-              
-                                                </table>                                           
-                                            </div> <!-- end preview-->
-                                        
-                                     
-                                        </div> <!-- end tab-content-->
-                        
                     </div>
-                     <!-- End Content -->
-                     </form>
+                    <!-- end page title -->
+<!-- Start Content-->
+<div class="container-fluid">
+                        
+                        <!-- start page title -->
+                       
+                        <!-- end page title -->
+                        <!-- <h4 class="page-title mb-3">Mes commandes</h4> -->
+                        
+                        
+                                           
+                                            <hr>
+                                            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xxl-8">
+                                       
+                                            @foreach( $lignes_commande as $commandes)
+                                            
+                                            <!--  -->
+    <div class="col">
+        <div class="card">
+            
+            <div class="card-body">
+                <div class="d-flex">
                     
+                    <div class="flex-shrink-0">
+                        <img class="rounded-circle avatar-sm" src="{{asset('assets/images/logo_prod.png')}}" alt="Avtar image">
+                    </div>
+                    <br>
+                    <div class="flex-grow-1 ms-2">
+                        <a href="javascript:void(0);" class="text-secondary"><h5 class="my-1"></h5></a>                                                
+                        <p class="text-muted mb-0">{{ $commandes -> chaussure_id }}</p>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="mdi mdi-dots-horizontal"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                           
+                            
+                            <a href="traitement/delete.php" class="dropdown-item text-info">
+                                <i class="mdi mdi-trash-can-outline me-1">
+
+                                </i>Annuler la commande</a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+           
+        </div>
+    </div> <!-- end col -->
+    @endforeach
+    <!--  -->
+                                               <!-- <div class="alert alert-info alert-dismissible fade show mb-0" role="alert">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                    <strong>Désolé! </strong>Aucun produit mis en avant
+                                                </div> -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                        </div> <!-- end row -->
+
+   
+
+</div> <!-- container -->
+</div> <!-- content -->
+
 
                 </div> <!-- content-page -->
 

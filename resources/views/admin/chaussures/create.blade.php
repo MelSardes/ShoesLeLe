@@ -201,7 +201,7 @@
                                             <div class="col-xl-6">
                                             <div class="mb-3">
                                                     <label class="form-label">Prix</label>
-                                                    <input type="text" required name="prix" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000" data-reverse="true">
+                                                    <input type="text" required name="prix" class="form-control" data-toggle="input-mask" data-mask-format="000000000000000" data-reverse="true">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label">Nombre disponible pour cette chaussure</label>

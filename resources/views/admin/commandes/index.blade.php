@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
         <meta charset="utf-8" />
-        <title>ESPACE</title>
+        <title>Espace producteurs</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -20,15 +20,10 @@
         
     </head>
 
-    <script type="text/javascript">
-        window.history.forward();
-        function noBack() {
-            window.history.forward();
-        }
-    </script>
-    <body  class="loading" data-layout-color="light" data-layout="detached" data-rightbar-onstart="true">
 
-   <!-- navbar -->
+    <body class="loading" data-layout-color="light" data-layout="detached" data-rightbar-onstart="true">
+
+                <!-- navbar -->
  <div style="background-color: #808000;" class="navbar-custom topnav-navbar topnav-navbar- ">
             <div class="container-fluid">
 
@@ -60,13 +55,13 @@
                             
     
                             <!-- item-->
-                            <a href="../producteur_dashboard/profil.php" class="dropdown-item notify-item">
+                            <!-- <a href="../producteur_dashboard/profil.php" class="dropdown-item notify-item">
                                 <i class="mdi mdi-account-circle me-1"></i>
                                 <span>Mon profil</span>
-                            </a>
+                            </a> -->
 
                             <!-- item-->
-                            <a href="../traitement/deconnexion/deconnexion.php" class="dropdown-item notify-item">
+                            <a href="#" class="dropdown-item notify-item">
                                 <i class="mdi mdi-logout me-1"></i>
                                 <span>Deconnexion</span>
                             </a>
@@ -124,7 +119,7 @@
 
 <!-- 
 <li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="profil.php" class="side-nav-link">
+    <a style="height:60px;font-size:15px" href="a.php" class="side-nav-link">
         <i class="dripicons-user"></i>
         <span>Mon profil</span>
         <span class="badge bg-warning rounded-pill float-end">0</span>
@@ -153,7 +148,6 @@
             <!-- <span class="badge bg-danger rounded-pill float-end">Nouveau</span> -->
     </a>
 </li>
-
                                 
     
 
@@ -168,96 +162,78 @@
                 </div>
                 <!-- Left Sidebar End -->
 
-<div class="content-page">
-                    <div class="content">
-                        
-                       
-                       
-                        <div class="alert alert-danger" role="alert"> <h4>
-                        
-</div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card widget-inline">
-                                    <div class="card-body p-0">
-                                        <div class="row g-0">
-                                            <div class="col-sm-6 col-lg-3">
+                <div class="content-page">
+                <div class="content">
 
-                                                <!-- <div class="card shadow-none m-0">
-                                                    <div class="card-body text-center">
-                                                 
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
 
-                                                        <i class="uil-newspaper text-muted" style="font-size: 44px;"></i>
-                                                        <h3><span></span></h3>
-                                                        <p class="text-muted font-15 mb-0">Annonces en cours</p>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                
-                                            <!-- <div class="col-sm-6 col-lg-3">
-                                                <div class="card shadow-none m-0 border-start">
-                                                    <div class="card-body text-center">
-                                                        <i class="dripicons-briefcase text-muted" style="font-size: 24px;"></i>
-                                                        <h3><span>715</span></h3>
-                                                        <p class="text-muted font-15 mb-0">Total Tasks</p>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                
-                                            <!-- <div class="col-sm-6 col-lg-3">
-                                                <div class="card shadow-none m-0 border-start">
-                                                    <div class="card-body text-center">
-                                                    
-                                                        <i class="dripicons-user-group text-muted" style="font-size: 44px;"></i>
-                                                        <h3><span></span></h3>
-                                                        <p class="text-muted font-15 mb-0">Agriculteurs</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                
-                                            <div class="col-sm-6 col-lg-6">
-                            <div class="card shadow-none m-0 border-start">
-                                <div class="card-body text-center">
-                                    <i class="uil-car text-muted" style="font-size: 24px;"></i>
-                                    <p class="text-muted font-15 mb-0">Vous n'avez pas encore configurer votre section <strong>transport</strong></p>
-                                </div>
+                                <h4 class="page-title">TOUTES LES COMMANDES</h4>
                             </div>
-                        
-                                            </div> -->
-                
-                                        </div> <!-- end row -->
-                                    </div>
-                                </div> <!-- end card-box-->
-                            </div> <!-- end col-->
                         </div>
-                        <!-- end row-->
+                    </div>
+                    <!-- end page title -->
+<!-- Start Content-->
+<div class="container-fluid">
+                        
+                        <!-- start page title -->
                        
+                        <!-- end page title -->
+                        <!-- <h4 class="page-title mb-3">Mes commandes</h4> -->
+<hr>
+                                            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xxl-8">
+                                       
+                                            @foreach( $lignes_commande as $commandes)
+                                            
+                                            <!--  -->
+    <div class="col">
+        <div class="card">
+            
+            <div class="card-body">
+                <div class="d-flex">
+                    
+                    <div class="flex-shrink-0">
+                        <img class="rounded-circle avatar-sm" src="{{asset('assets/images/logo_prod.png')}}" alt="Avtar image">
+                    </div>
+                    <br>
+                    <div class="flex-grow-1 ms-2">
+                        <a href="javascript:void(0);" class="text-secondary"><h5 class="my-1"></h5></a>                                                
+                        <p class="text-muted mb-0">{{ $commandes -> chaussure_id }}</p>
+                    </div>
 
-                        
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="mdi mdi-dots-horizontal"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                           
+                            
+                            <a href="traitement/delete.php" class="dropdown-item text-info">
+                                <i class="mdi mdi-trash-can-outline me-1">
+
+                                </i>Annuler la commande</a>
                         </div>
-                        <!-- end row-->
-                <!-- content-page -->
-
-            </div> <!-- end wrapper-->
+                    </div>
+                </div>
+               
+            </div>
+           
         </div>
-        <!-- END Container -->
-
-
-
-        <!-- bundle -->
-        <script src="{{asset('assets/js/vendor.min.js')}}"></script>
+    </div> <!-- end col -->
+    @endforeach
+     <!-- bundle -->
+     <script src="{{asset('assets/js/vendor.min.js')}}"></script>
         <script src="{{asset('assets/js/app.min.js')}}"></script>
 
-        <!-- third party js -->
-        <script src="{{asset('assets/js/vendor/chart.min.js')}}"></script>
-
-        <!-- third party js ends -->
-
-        <!-- demo app -->
-        <script src="{{asset('assets/js/pages/demo.dashboard.js')}}"></script>
-        <!-- end demo js-->
+        <!-- plugin js -->
+        <script src="{{asset('assets/js/vendor/dropzone.min.js')}}"></script>
+        <!-- init js -->
+        <script src="{{asset('assets/js/ui/component.fileupload.js')}}"></script>
         
     </body>
 
+<!-- Mirrored from coderthemes.com/hyper/modern/apps-projects-add.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Aug 2022 14:49:06 GMT -->
 </html>
-

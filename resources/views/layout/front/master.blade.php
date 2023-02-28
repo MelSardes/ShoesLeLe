@@ -1343,9 +1343,14 @@
                             <a href="index.html" title="Shoeser" rel="home">
                                 <img alt="shoeser" src="{{asset('wp-content/uploads/2022/10/logo.svg')}}" width="100"/> </a>
                         </div>
+                        <button  type="button" class="btn btn-info">
+                            <a href="{{ route('admin.index')}}" style="color:white;">ESPACE ADMIN</a>
+                        </button>
+                        <br><br>
                         <!-- Header Search start -->
                         <div class="header-search">
                             <div class="header-toggle"></div>
+                            
                             <form role="search" method="get" class="woocommerce-product-search"
                                   action="https://demos.coderplace.com/woo/WCM01/WCM01004/">
                                 <label class="screen-reader-text" for="woocommerce-product-search-field-0">Search
@@ -1617,20 +1622,22 @@
                         <div class="header-cart headercart-block">
                             <div class="cart togg">
 
-                                <div class="shopping_cart tog" title="View your shopping cart">
-                                    <div class="cart-icon"></div>
+                                <div class="shopping_cart" >
+                                    <div class="cart-icon">
+                                        
+                                    </div>
                                     <div class="cart-price">
-                                        <a class="cart-contents" href="cart/index.html" title="View your shopping cart">
+                                        <a class="cart-contents" href="{{route('panier.show')}}" title="View your shopping cart">
                                                 <span class="cart-qty">
                                                     0 </span>
                                         </a>
                                     </div>
                                 </div>
-                                <aside id="woocommerce_widget_cart-3"
+                                <!-- <aside id="woocommerce_widget_cart-3"
                                        class="widget woocommerce widget_shopping_cart tab_content">
                                     <h3 class="widget-title">Cart</h3>
                                     <div class="widget_shopping_cart_content"></div>
-                                </aside>
+                                </aside> -->
                             </div>
                         </div>
                     </div>

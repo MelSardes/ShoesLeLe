@@ -55,13 +55,13 @@
 
 
                         <!-- item-->
-                        <a href="" class="dropdown-item notify-item">
+                        <a href="{{route('profil')}}" class="dropdown-item notify-item">
                             <i class="mdi mdi-account-circle me-1"></i>
                             <span class="account-user-name">{{ Auth::user()->email }}</span>
                         </a>
 
                         <!-- item-->
-                        <a href="../traitement/deconnexion/deconnexion.php" class="dropdown-item notify-item">
+                        <a href="{{route('deconnexion')}}" class="dropdown-item notify-item">
                             <i class="mdi mdi-logout me-1"></i>
                             <span>Deconnexion</span>
                         </a>

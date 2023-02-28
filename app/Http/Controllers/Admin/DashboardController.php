@@ -11,4 +11,9 @@ class DashboardController extends Controller
         $categories=Categorie::latest()->get();
         return view('admin.dashboard', compact('categories'));
     }
+    public function connexion()
+    {
+        
+        return view('auth.admin.login');
+    }
 }

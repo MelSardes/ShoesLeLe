@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-@extends('layouts.app')
+<!--  -->
 
 <!-- Mirrored from demos.coderplace.com/woo/WCM01/WCM01004/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Feb 2023 13:54:01 GMT -->
 <!-- Added by HTTrack -->
@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                
 
 <head>
     <meta charset="UTF-8">
@@ -725,11 +725,9 @@
     </script>
     <script src="{{asset('front/wp-content/themes/shoeser/js/megnor/megnorloadmore5b21.js?ver=6.0.2')}}" id='phpvariable-js'></script>
     <link rel="https://api.w.org/" href="{{asset('front/wp-json/index.html')}}"/>
-    <link rel="alternate" type="application/json" href="{{asset('front/" wp-json
-    /wp/v2/pages/11504.json"/')}}">
+    <link rel="alternate" type="application/json" href="{{asset('front/wp-json /wp/v2/pages/11504.json')}}"/>
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{asset('front/xmlrpc0db0.php?rsd')}}"/>
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{{asset('front/" wp-includes
-    /wlwmanifest.xml"/')}}">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{{asset('front/wp-includes/wlwmanifest.xml')}}"/>
     <meta name="generator" content="WordPress 6.0.2"/>
     <meta name="generator" content="WooCommerce 7.4.0"/>
     <link rel='shortlink' href='index.html'/>
@@ -1381,7 +1379,7 @@
                             <div class="mobile-menu">
                                 <span class="close-menu"></span>
                                 <div class="menu-tm-header-navigation-container">
-                                    <ul id="menu-tm-header-navigation" class="mobile-menu-inner">
+                                    <!-- <ul id="menu-tm-header-navigation" class="mobile-menu-inner">
                                         <li id="menu-item-23549"
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-11504 current_page_item menu-item-23549">
                                             <a href="index.html" aria-current="page">Home</a></li>
@@ -1577,7 +1575,7 @@
                                         <li id="menu-item-17327"
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17327">
                                             <a href="contact-us/index.html">Contact Us</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </nav>
@@ -1586,7 +1584,7 @@
                             <a href="{{ route('deconnexion')}}" style="color:white;">DECONNEXION</a>
                         </button>
                                      
-
+                        
                         <!-- Topbar link -->
                         <div class="account-link">
                             <span class="account-icon">Connexion</span>
@@ -1596,6 +1594,11 @@
                                 <div class="account-menu-links">
                                     <!-- <a href="a.html">Se connecter</a> -->
                                     <ul id="menu-header-top-links" class="header-top-link">
+                                    <li id="menu-item-20761"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20761">Connecté en tant que : 
+                                            {{Auth::user()->name}}
+                                        </li>
+                                        <hr>
                                         <li id="menu-item-20761"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20761">
                                             <a href="{{route('dashboard')}}">Mon compte</a>
@@ -1624,22 +1627,22 @@
                         <a class="whislist-counter" href=wishlist/index.html><span
                                 class="account-icon"></span></a>
                         <div class="header-cart headercart-block">
-                            <div class="cart togg">
+                            <div class="cart ">
 
-                                <div class="shopping_cart tog" title="View your shopping cart">
-                                    <div class="cart-icon"></div>
-                                    <div class="cart-price">
-                                        <a class="cart-contents" href="cart/index.html" title="View your shopping cart">
+                                <div class="shopping_cart">
+                                    <!-- <div class="cart-icon"></div>
+                                    <div class="cart-price"> -->
+                                        <a class="cart" href="{{route('panier.show')}}">
                                                 <span class="cart-qty">
-                                                    0 </span>
+                                                    Panier</span>
                                         </a>
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
-                                <aside id="woocommerce_widget_cart-3"
+                                <!-- <aside id="woocommerce_widget_cart-3"
                                        class="widget woocommerce widget_shopping_cart tab_content">
                                     <h3 class="widget-title">Cart</h3>
                                     <div class="widget_shopping_cart_content"></div>
-                                </aside>
+                                </aside> -->
                             </div>
                         </div>
                     </div>
@@ -1650,7 +1653,7 @@
                 <!-- End header-top -->
                 <div class="header-bottom">
                     <div class="header-bottom-container">
-                        <nav id="site-navigation" class="navigation-bar main-navigation">
+                        <!-- <nav id="site-navigation" class="navigation-bar main-navigation">
                             <a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to
                                 content</a>
                             <div class="mega-menu">
@@ -1857,7 +1860,7 @@
                             <div class="category-image">
 
                             </div>
-                        </nav>
+                        </nav> -->
                     </div>
                 </div>
             </div>

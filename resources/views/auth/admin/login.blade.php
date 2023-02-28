@@ -43,25 +43,35 @@
                             
                                     <h4 class="text-dark-50 text-center pb-0 fw-bold">Connexion</h4>
                                     <p class="text-muted mb-4">Entrer votre adresse email et mot de passe pour acceder à votre espace administrateur.</p>
-                                </div>
-                                @csrf
-                                <form action="traitement/connexion/login.php" method="post">
                                     
+                                </div>
+                                
+                                <form action="{{route('admin.connexion')}}" method="POST">
+                                @csrf  
                                     <div class="mb-3">
                                         <label for="emailaddress" class="form-label">Adresse email</label>
-                                        <input class="form-control" required name="email" type="email" required="" placeholder="Entrer votre email">
+                                        <input class="form-control" id="email" required name="email" type="email" required="" placeholder="Entrer votre email">
                                     </div>
-
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $erreur }}</strong>
+                                        </span>
+                                        @enderror
                                     <div class="mb-3">
                                         <a href="reset_mdp.php" class="text-muted float-end"><small>Mot de passe oublié?</small></a>
                                         <label for="password" class="form-label">Mot de passe</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" required name="password" class="form-control" placeholder="Entrer votre mot de passe">
+                                            <input type="password" id="mdp" required name="password" class="form-control" placeholder="Entrer votre mot de passe">
                                             <div class="input-group-text" data-password="false">
                                                 <span class="password-eye"></span>
                                             </div>
                                         </div>
                                     </div>
+                                    @error('mdp')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $erreur }}</strong>
+                                        </span>
+                                        @enderror
 
                                     <!-- <div class="mb-3 mb-3">
                                         <div class="form-check">
@@ -71,8 +81,8 @@
                                     </div> -->
 
                                     <div class="mb-3 mb-0 text-center">
-                                        <a href="{{route ('dash')}}" class="btn btn-danger"> Se connecter</a>
-                                        <!-- <button name="valider" class="btn btn-danger" type="submit"> Se connecter</button> -->
+                                        <!-- <a href="{{route ('dashboard')}}" class="btn btn-danger"> Se connecter</a> -->
+                                        <button name="valider" class="btn btn-danger" type="submit"> Se connecter</button>
                                     </div>
 
                                 </form>

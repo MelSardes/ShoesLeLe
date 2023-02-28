@@ -58,9 +58,9 @@
                                                                                         data-frame_1="e:power4.out;st:1790;sp:1000;sR:1790;"
                                                                                         data-frame_999="x:-50;o:0;st:w;sp:1000;sR:6210;"
                                                                                         style="z-index:11;font-family:'Inter';text-transform:uppercase;">
-                                                                                        Limited
-                                                                                        Time Offer !!
-                                                                                    </rs-layer><a
+                                                                                        Temps limité
+                                                                                    </rs-layer>
+                                                                                    <!-- <a
                                                                                         id="slider-8-slide-32-layer-10"
                                                                                         class="rs-layer rev-btn"
                                                                                         href="#" target="_self"
@@ -77,7 +77,7 @@
                                                                                         data-frame_hover="c:#222;boc:#222;bor:0px,0px,0px,0px;bos:solid;bow:0px,0px,1px,0px;"
                                                                                         style="z-index:8;font-family:'Inter';text-transform:uppercase;">View
                                                                                         more
-                                                                                    </a>
+                                                                                    </a> -->
                                                                                     <rs-layer
                                                                                         id="slider-8-slide-32-layer-13"
                                                                                         data-type="text"
@@ -89,9 +89,9 @@
                                                                                         data-frame_1="e:power4.out;st:970;sp:1000;sR:970;"
                                                                                         data-frame_999="x:-50;o:0;st:w;sp:1000;sR:7030;"
                                                                                         style="z-index:10;font-family:'Inter';text-transform:uppercase;">
-                                                                                        Men's
-                                                                                        Running<br>
-                                                                                        shoes
+                                                                                        CHAUSSURES POUR<br>
+                                                                                        HOMMES,FEMMES <br>
+                                                                                         & ENFANTS
                                                                                     </rs-layer>
                                                                                 </rs-slide>
                                                                                 <rs-slide style="position: absolute;"
@@ -122,7 +122,8 @@
                                                                                         style="z-index:11;font-family:'Inter';text-transform:uppercase;">
                                                                                         Limited
                                                                                         Time Offer !!
-                                                                                    </rs-layer><a
+                                                                                    </rs-layer>
+                                                                                    <!-- <a
                                                                                         id="slider-8-slide-33-layer-10"
                                                                                         class="rs-layer rev-btn"
                                                                                         href="#" target="_self"
@@ -139,7 +140,7 @@
                                                                                         data-frame_hover="c:#222;boc:#222;bor:0px,0px,0px,0px;bos:solid;bow:0px,0px,1px,0px;"
                                                                                         style="z-index:8;font-family:'Inter';text-transform:uppercase;">View
                                                                                         More
-                                                                                    </a>
+                                                                                    </a> -->
                                                                                     <rs-layer
                                                                                         id="slider-8-slide-33-layer-13"
                                                                                         data-type="text"
@@ -151,9 +152,9 @@
                                                                                         data-frame_1="e:power4.out;st:970;sp:1000;sR:970;"
                                                                                         data-frame_999="x:-50;o:0;st:w;sp:1000;sR:7030;"
                                                                                         style="z-index:10;font-family:'Inter';text-transform:uppercase;">
-                                                                                        Buy
-                                                                                        Lofer<br>
-                                                                                        Shoes
+                                                                                        Commandez vos <br>
+                                                                                        chaussures dès <br>
+                                                                                        maintenant !!!
                                                                                     </rs-layer>
                                                                                 </rs-slide>
                                                                             </rs-slides>
@@ -312,8 +313,8 @@
                                                             data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
                                                                 <h2 class="elementor-heading-title elementor-size-default">
-                                                                    Casual<br>
-                                                                    Shoes</h2>
+                                                                    CHAUSSURES<br>
+                                                                    HOMMES</h2>
                                                             </div>
                                                         </div>
                                                         <div class="elementor-element elementor-element-8afad15 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-heading"
@@ -321,9 +322,9 @@
                                                             data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
                                                             data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
-                                                                <span
+                                                                <!-- <span
                                                                     class="elementor-heading-title elementor-size-default"><a
-                                                                        href="#">View More</a></span>
+                                                                        href="#">View More</a></span> -->
                                                             </div>
                                                         </div>
                                                         <div class="elementor-element elementor-element-7a8272f elementor-widget elementor-widget-image"
@@ -378,7 +379,7 @@
                                                             <div class="elementor-widget-container">
                                                                 <div
                                                                     class="elementor-heading-title elementor-size-default">
-                                                                    <a href="#">View More</a>
+                                                                    <!-- <a href="#">View More</a> -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -388,7 +389,7 @@
                                                             data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
                                                                 <span
-                                                                    class="elementor-heading-title elementor-size-default">Shoes</span>
+                                                                    class="elementor-heading-title elementor-size-default">FEMMES</span>
                                                             </div>
                                                         </div>
                                                         <div class="elementor-element elementor-element-9e6b51a elementor-absolute elementor-widget__width-auto elementor-widget elementor-widget-heading"
@@ -397,7 +398,7 @@
                                                             data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
                                                                 <h2 class="elementor-heading-title elementor-size-default">
-                                                                    Athletic
+                                                                    CHAUSSURES
                                                                 </h2>
                                                             </div>
                                                         </div>
@@ -406,8 +407,8 @@
                                                             data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
                                                             data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
-                                                                <span
-                                                                    class="elementor-heading-title elementor-size-default">Limited</span>
+                                                                <!-- <span
+                                                                    class="elementor-heading-title elementor-size-default">Limited</span> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -431,9 +432,9 @@
                                                             data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
                                                             data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
-                                                                <span
+                                                                <!-- <span
                                                                     class="elementor-heading-title elementor-size-default"><a
-                                                                        href="#">View More</a></span>
+                                                                        href="#">View More</a></span> -->
                                                             </div>
                                                         </div>
                                                         <div class="elementor-element elementor-element-cf699d5 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-heading"
@@ -451,8 +452,8 @@
                                                             data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
                                                                 <h2 class="elementor-heading-title elementor-size-default">
-                                                                    Formal<br>
-                                                                    Shoes</h2>
+                                                                    CHAUSSURES<br>
+                                                                    POUR LES PLUS PETITS</h2>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -573,14 +574,11 @@
                                                                                                                                     {{ $chaussure->nom_chaussure }}
                                                                                                                                     </h3>
                                                                                                                                 </a>
-<!-- 
-                                                                                                                                <span class="price">
-                                                                                                                                    <span
-                                                                                                                                        class="woocommerce-Price-amount amount">
-                                                                                                                                        <bdi>{{ $chaussure->prix }}
-                                                                                                                                            Fcfa</bdi>
-                                                                                                                                    </span>
-                                                                                                                                </span> -->
+
+                                                                                                                                <span
+                                                                                                                                    class="price"><span
+                                                                                                                                        class="woocommerce-Price-amount amount"><bdi>{{ $chaussure->prix }}
+                                                                                                                                            Fcfa</bdi></span></span>
                                                                                                                                 <div
                                                                                                                                     class="price-block">
                                                                                                                                 </div>
@@ -684,13 +682,13 @@
                                                                                                                             href="product/black-low-top-sneakers-shoe/index.html">
                                                                                                                             <img width="967"
                                                                                                                                 height="1000"
-                                                                                                                                src="{{ asset('front/wp-content/uploads/2022/02/09.jpg') }}"
+                                                                                                                                src="{{ asset('/'.$chaussure-> image) }}"
                                                                                                                                 class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                                                                 alt=""
                                                                                                                                 loading="lazy" /><img
                                                                                                                                 width="967"
                                                                                                                                 height="1000"
-                                                                                                                                src="{{ asset('front/wp-content/uploads/2022/02/14.jpg') }}"
+                                                                                                                                src="{{ asset('/'.$chaussure-> image) }}"
                                                                                                                                 class="secondary-image attachment-shop-catalog"
                                                                                                                                 alt=""
                                                                                                                                 loading="lazy" /></a>
@@ -729,15 +727,17 @@
                                                                                                                                 </div>
                                                                                                                                 <div
                                                                                                                                     class="woocommerce product compare-button">
-                                                                                                                                    <a href="https://demos.coderplace.com/woo/WCM01/WCM01004?action=yith-woocompare-add-product&amp;id=10359"
+                                                                                                                                    <!-- <a href="https://demos.coderplace.com/woo/WCM01/WCM01004?action=yith-woocompare-add-product&amp;id=10359"
                                                                                                                                         class="compare button"
                                                                                                                                         data-product_id="10359"
-                                                                                                                                        rel="nofollow">Comparer</a>
+                                                                                                                                        rel="nofollow">Comparer
+                                                                                                                                    </a> -->
                                                                                                                                 </div>
-                                                                                                                                <a href="#"
+                                                                                                                                <!-- <a href="#"
                                                                                                                                     class="button yith-wcqv-button"
                                                                                                                                     data-product_id="10359">Quick
-                                                                                                                                    View</a>
+                                                                                                                                    View
+                                                                                                                                </a> -->
                                                                                                                             </div>
                                                                                                                         </div>
                                                                                                                     </div>
@@ -769,7 +769,7 @@
                                                                                                                         <span
                                                                                                                             class="price"><span
                                                                                                                                 class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>191.00</bdi></span></span>
+                                                                                                                                        class="woocommerce-Price-currencySymbol"></span>{{ $chaussure->prix }}</bdi>  XAF</span></span>
                                                                                                                         <div
                                                                                                                             class="price-block">
                                                                                                                         </div>
@@ -809,7 +809,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="elementor-section elementor-top-section elementor-element elementor-element-03c4001 theme-container elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                        <!-- <div class="elementor-section elementor-top-section elementor-element elementor-element-03c4001 theme-container elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                             data-id="03c4001" data-element_type="section"
                                             data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-container elementor-column-gap-default">
@@ -842,90 +842,41 @@
                                                                         max-width: calc(100% / var(--e-image-carousel-slides-to-show, 3))
                                                                     }
                                                                 </style>
+                                                                <h1>Nos marques</h1>
                                                                 <div class="elementor-image-carousel-wrapper swiper-container"
                                                                     dir="ltr">
+                                                                    @foreach ($categories as $cat)
                                                                     <div class="elementor-image-carousel swiper-wrapper">
-                                                                        <div class="swiper-slide"><a
-                                                                                data-elementor-open-lightbox="yes"
+                                                                    
+                                                                        <div class="swiper-slide">
+                                                                        
+                                                                            <a  data-elementor-open-lightbox="yes"
                                                                                 data-elementor-lightbox-slideshow="d91a174"
                                                                                 data-elementor-lightbox-title="brand1"
                                                                                 data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MjI4NzksInVybCI6Imh0dHBzOlwvXC9kZW1vcy5jb2RlcnBsYWNlLmNvbVwvd29vXC9XQ00wMVwvV0NNMDEwMDRcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjJcLzAyXC9icmFuZDEucG5nIiwic2xpZGVzaG93IjoiZDkxYTE3NCJ9"
                                                                                 href="#">
+                                                                                
                                                                                 <figure class="swiper-slide-inner">
+                                                                                    <h1>{{ $cat->nom_categorie }}</h1>
                                                                                     <img class="swiper-slide-image"
                                                                                         src="{{ asset('front/wp-content/uploads/2022/02/brand1.png') }}"
                                                                                         alt="brand1" />
                                                                                 </figure>
-                                                                            </a></div>
-                                                                        <div class="swiper-slide"><a
-                                                                                data-elementor-open-lightbox="yes"
-                                                                                data-elementor-lightbox-slideshow="d91a174"
-                                                                                data-elementor-lightbox-title="brand2"
-                                                                                data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MjI4ODAsInVybCI6Imh0dHBzOlwvXC9kZW1vcy5jb2RlcnBsYWNlLmNvbVwvd29vXC9XQ00wMVwvV0NNMDEwMDRcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjJcLzAyXC9icmFuZDIucG5nIiwic2xpZGVzaG93IjoiZDkxYTE3NCJ9"
-                                                                                href="#">
-                                                                                <figure class="swiper-slide-inner">
-                                                                                    <img class="swiper-slide-image"
-                                                                                        src="{{ asset('front/wp-content/uploads/2022/02/brand2.png') }}"
-                                                                                        alt="brand2" />
-                                                                                </figure>
-                                                                            </a></div>
-                                                                        <div class="swiper-slide"><a
-                                                                                data-elementor-open-lightbox="yes"
-                                                                                data-elementor-lightbox-slideshow="d91a174"
-                                                                                data-elementor-lightbox-title="brand3"
-                                                                                data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MjI4ODEsInVybCI6Imh0dHBzOlwvXC9kZW1vcy5jb2RlcnBsYWNlLmNvbVwvd29vXC9XQ00wMVwvV0NNMDEwMDRcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjJcLzAyXC9icmFuZDMucG5nIiwic2xpZGVzaG93IjoiZDkxYTE3NCJ9"
-                                                                                href="#">
-                                                                                <figure class="swiper-slide-inner">
-                                                                                    <img class="swiper-slide-image"
-                                                                                        src="{{ asset('front/wp-content/uploads/2022/02/brand3.png') }}"
-                                                                                        alt="brand3" />
-                                                                                </figure>
-                                                                            </a></div>
-                                                                        <div class="swiper-slide"><a
-                                                                                data-elementor-open-lightbox="yes"
-                                                                                data-elementor-lightbox-slideshow="d91a174"
-                                                                                data-elementor-lightbox-title="brand4"
-                                                                                data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MjI4ODIsInVybCI6Imh0dHBzOlwvXC9kZW1vcy5jb2RlcnBsYWNlLmNvbVwvd29vXC9XQ00wMVwvV0NNMDEwMDRcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjJcLzAyXC9icmFuZDQucG5nIiwic2xpZGVzaG93IjoiZDkxYTE3NCJ9"
-                                                                                href="#">
-                                                                                <figure class="swiper-slide-inner">
-                                                                                    <img class="swiper-slide-image"
-                                                                                        src="{{ asset('front/wp-content/uploads/2022/02/brand4.png') }}"
-                                                                                        alt="brand4" />
-                                                                                </figure>
-                                                                            </a></div>
-                                                                        <div class="swiper-slide"><a
-                                                                                data-elementor-open-lightbox="yes"
-                                                                                data-elementor-lightbox-slideshow="d91a174"
-                                                                                data-elementor-lightbox-title="brand5"
-                                                                                data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MjI4ODMsInVybCI6Imh0dHBzOlwvXC9kZW1vcy5jb2RlcnBsYWNlLmNvbVwvd29vXC9XQ00wMVwvV0NNMDEwMDRcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjJcLzAyXC9icmFuZDUucG5nIiwic2xpZGVzaG93IjoiZDkxYTE3NCJ9"
-                                                                                href="#">
-                                                                                <figure class="swiper-slide-inner">
-                                                                                    <img class="swiper-slide-image"
-                                                                                        src="{{ asset('front/wp-content/uploads/2022/02/brand5.png') }}"
-                                                                                        alt="brand5" />
-                                                                                </figure>
-                                                                            </a></div>
-                                                                        <div class="swiper-slide"><a
-                                                                                data-elementor-open-lightbox="yes"
-                                                                                data-elementor-lightbox-slideshow="d91a174"
-                                                                                data-elementor-lightbox-title="brand6"
-                                                                                data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MjI4ODQsInVybCI6Imh0dHBzOlwvXC9kZW1vcy5jb2RlcnBsYWNlLmNvbVwvd29vXC9XQ00wMVwvV0NNMDEwMDRcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjJcLzAyXC9icmFuZDYucG5nIiwic2xpZGVzaG93IjoiZDkxYTE3NCJ9"
-                                                                                href="#">
-                                                                                <figure class="swiper-slide-inner">
-                                                                                    <img class="swiper-slide-image"
-                                                                                        src="{{ asset('front/wp-content/uploads/2022/02/brand6.png') }}"
-                                                                                        alt="brand6" />
-                                                                                </figure>
-                                                                            </a></div>
+                                                                                
+                                                                            </a>
+                                                                            
+                                                                        </div>@endforeach
                                                                     </div>
+                                                                    
                                                                 </div>
+                                                               
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="inner-container">
                                     </div>
                                     <!-- .inner-container -->

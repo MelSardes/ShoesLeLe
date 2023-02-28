@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Commande;
+use App\Models\LigneCommande;
+use Illuminate\Support\Facades\DB;
+
 class CommandeController extends Controller
 
 {
     public function index() {
         // Récupere tous les éléments et retourne la vue index
+        $lignes_commande=DB::table('lignes_commande')->get();
+        // DB::table('chaussures')
+        // $categories=Commande::latest()->get();
+        return view('admin.commandes.index',compact('lignes_commande'));
     }
 
 

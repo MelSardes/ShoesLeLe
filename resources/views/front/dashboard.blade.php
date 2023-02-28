@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
         <meta charset="utf-8" />
-        <title>Espace producteurs</title>
+        <title>Espace client</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('assets/images/logo_prod.png')}}">
+        <!-- <link rel="shortcut icon" href="{{asset('assets/images/logo_prod.png')}}"> -->
 
         <!-- third party css -->
         <link href="{{asset('assets/css/vendor/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
@@ -193,12 +193,25 @@
                                                 <div class="card shadow-none m-0 border-start">
                                                     <div class="card-body text-center">
                                                     
-                                                        <i class="dripicons-user-group text-muted" style="font-size: 44px;"></i>
-                                                        <h3><span></span></h3>
-                                                        <p class="text-muted font-15 mb-0">Agriculteurs</p>
+                                                        <i class="dripicons-user" style="font-size: 44px;"></i>
+                                                        <h3><span><span class="account-user-name">{{ Auth::user()->name }}</span></span></h3>
+                                                        <p class="text-muted font-15 mb-0">Connecté en tant que:</p>
                                                     </div>
                                                 </div>
                                             </div>
+                                            
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card shadow-none m-0 border-start">
+                                                    <div class="card-body text-center">
+                                                    
+                                                        <i class="dripicons-user" style="font-size: 44px;"></i>
+                                                        
+                                                        <h3><span><span class="account-user-name">{{ Auth::user()->email }}</span></span></h3>
+                                                        <p class="text-muted font-15 mb-0">Email:</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                
                 
                                             <!-- <div class="col-sm-6 col-lg-6">
                             <div class="card shadow-none m-0 border-start">

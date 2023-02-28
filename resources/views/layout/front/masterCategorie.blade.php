@@ -2040,10 +2040,10 @@
         </header>
         <div class="page-title header">
             <div class="page-title-inner">
-                <h1 class="entry-title-main">Archives: <span>Tous Les Products</span></h1>
+                <h1 class="entry-title-main">Votre: <span>Panier de commandes</span></h1>
                 <div class="breadcrumbs">
                     <p id="breadcrumbs"><span><span><a href="../index.html">Acceuil</a></span> &raquo; <span
-                                class="breadcrumb_last" aria-current="page">Magasin</span></span></p>
+                                class="breadcrumb_last" aria-current="page">Panier</span></span></p>
                 </div>
             </div>
         </div>

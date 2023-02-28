@@ -126,13 +126,13 @@
     </a>
 </li> -->
 
-<!-- <li class="side-nav-item">
-    <a style="height:60px;font-size:15px" href="entreprise.php" class="side-nav-link">
+<li class="side-nav-item">
+    <a style="height:60px;font-size:15px" href="{{route('admin.commandes')}}" class="side-nav-link">
         <i class="dripicons-briefcase"></i>
         <span>Commandes</span>
         <span class="badge bg-warning rounded-pill float-end">0</span>
     </a>
-</li> -->
+</li>
 <li class="side-nav-item">
     <a style="height:60px;font-size:15px" href="{{route('admin.chaussures')}}" class="side-nav-link">
         <i class="uil-newspaper"></i>
